@@ -4,35 +4,25 @@ import arMessages from "@/messages/ar/home.json";
 
 export async function getHomeMetadata(locale: string): Promise<Metadata> {
   const t = locale === "ar" ? arMessages : enMessages;
-  
-  // Dynamic base URL for development vs production
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://abusarajewelry.com' 
-    : 'http://localhost:3000';
+  const path = `https://abusarajewelry.com/${locale}/home`;
 
   return {
     title: t.metadata.title,
     description: t.metadata.description,
     keywords: t.metadata.keywords,
     alternates: {
-      canonical: `${baseUrl}/${locale}`,
+      canonical: path,
       languages: {
-        "en-US": `${baseUrl}/en`,
-        "ar-JO": `${baseUrl}/ar`,
+        "en-US": "https://abusarajewelry.com/en/home",
+        "ar-JO": "https://abusarajewelry.com/ar/home",
       },
     },
     openGraph: {
       title: t.metadata.title,
       description: t.metadata.description,
-      url: `${baseUrl}/${locale}`,
+      url: path,
       type: "website",
       images: [{ url: "/assets/og-default.jpg", width: 1200, height: 630 }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t.metadata.title,
-      description: t.metadata.description,
-      images: ["/assets/og-default.jpg"],
     },
   };
 }
