@@ -26,7 +26,7 @@ export const about ={
   aboutUsHero: '/assets/images/about/about_us_hero.png',
   ourStory: '/assets/images/about/shop.jpg',
   firstShop: '/assets/images/about/shop2.jpg',
-  secondShop: '/assets/images/about/shop.jpg',
+  secondSh: '/assets/images/about/shop.jpg',
 }
 
 // ─── Service Images ──────────────────────────────────────

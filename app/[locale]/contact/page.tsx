@@ -102,7 +102,7 @@ export default async function ContactPage() {
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-[#E6C687] hover:bg-[#b8956f] text-white text-sm font-semibold uppercase tracking-widest px-8 py-3 transition-colors duration-200"
-                >E6C687
+                >
                   <WhatsAppGlyph />
                   {t("info.items.whatsapp.title")}
                 </a>

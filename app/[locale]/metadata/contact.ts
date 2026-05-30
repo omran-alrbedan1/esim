@@ -4,7 +4,7 @@ import arMessages from "@/messages/ar/contact.json";
 
 export async function getContactMetadata(locale: string): Promise<Metadata> {
   const t = locale === "ar" ? arMessages : enMessages;
-  const path = `https://abusarajewelry.com/${locale}/contact`;
+  const path = `https://rovana-git-main-omran-alrbedan1s-projects.vercel.app/${locale}/contact`;
 
   return {
     title: t.metadata.title,
@@ -13,8 +13,8 @@ export async function getContactMetadata(locale: string): Promise<Metadata> {
     alternates: {
       canonical: path,
       languages: {
-        "en-US": "https://abusarajewelry.com/en/contact",
-        "ar-JO": "https://abusarajewelry.com/ar/contact",
+        "en-US": "https://rovana-git-main-omran-alrbedan1s-projects.vercel.app/en/contact",
+        "ar-JO": "https://rovana-git-main-omran-alrbedan1s-projects.vercel.app/ar/contact",
       },
     },
     openGraph: {

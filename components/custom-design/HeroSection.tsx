@@ -35,7 +35,7 @@ export default function HeroSection() {
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/70">
           {t("subtitle")}
         </p>
-        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+        <div className="hidden flex-col justify-center gap-4 sm:flex-row md:flex">
           <a
             href="#design-request"
             className="inline-block bg-[#E6C687] hover:bg-[#b8956f] text-white text-sm font-semibold uppercase tracking-widest px-8 py-3 transition-colors duration-200"

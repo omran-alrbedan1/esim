@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const BASE_URL = "https://abusarajewelry.com";
+  const BASE_URL = "https://rovana-git-main-omran-alrbedan1s-projects.vercel.app";
 
   const staticPages = [
     "/",
