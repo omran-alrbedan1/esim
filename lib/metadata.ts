@@ -3,6 +3,13 @@ import type { Metadata } from 'next';
 
 const BASE_URL = 'https://beyond-gluten.vercel.app';
 
+const openGraphImage = {
+  url: '/og-image.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'Beyond Gluten - Gluten-Free Platform',
+};
+
 export async function getRootLayoutMetadata({ locale }: { locale: string }): Promise<Metadata> {
     const t = await getTranslations({ locale, namespace: 'layout.metadata' });
 
@@ -23,8 +30,9 @@ export async function getRootLayoutMetadata({ locale }: { locale: string }): Pro
             googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 }
         },
         alternates: {
-            canonical: BASE_URL,
+            canonical: `${BASE_URL}/${locale}`,
             languages: {
+              'x-default': `${BASE_URL}/en`,
               'en': `${BASE_URL}/en`,
               'ar': `${BASE_URL}/ar`,
             },
@@ -32,20 +40,20 @@ export async function getRootLayoutMetadata({ locale }: { locale: string }): Pro
         openGraph: {
             type: 'website',
             locale: locale === 'ar' ? 'ar_AR' : 'en_US',
-            url: BASE_URL,
+            url: `${BASE_URL}/${locale}`,
             siteName: 'Beyond Gluten',
             title: t('title.default'),
             description: t('description'),
-            images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Beyond Gluten - Gluten Free Platform' }]
+            images: [openGraphImage],
         },
         twitter: {
             card: 'summary_large_image',
             title: t('title.default'),
             description: t('description'),
-            images: ['/twitter-image.jpg']
+            images: ['/og-image.jpg'],
         },
-        icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
-        manifest: '/site.webmanifest',
+        icons: { icon: '/favicon.ico', apple: '/images/logo.png' },
+        manifest: '/manifest',
         verification: { google: 'google-site-verification-code' }
     };
 }
@@ -63,6 +71,7 @@ export async function getHomePageMetadata({ locale }: { locale: string }): Promi
             title: t('openGraph.title'),
             description: t('openGraph.description'),
             url: canonicalUrl,
+            images: [openGraphImage],
         },
     };
 }
@@ -80,6 +89,7 @@ export async function getAboutPageMetadata({ locale }: { locale:string }): Promi
             title: t('openGraph.title'),
             description: t('openGraph.description'),
             url: canonicalUrl,
+            images: [openGraphImage],
         },
     };
 }
@@ -97,6 +107,7 @@ export async function getContactPageMetadata({ locale }: { locale:string }): Pro
             title: t('openGraph.title'),
             description: t('openGraph.description'),
             url: canonicalUrl,
+            images: [openGraphImage],
         },
     };
 }
