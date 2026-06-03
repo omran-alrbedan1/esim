@@ -4,10 +4,11 @@ import type { Metadata } from 'next';
 const BASE_URL = 'https://beyond-gluten.vercel.app';
 
 const openGraphImage = {
-  url: '/og-image.jpg',
+  url: `${BASE_URL}/og-image.jpg`,
   width: 1200,
   height: 630,
   alt: 'Beyond Gluten - Gluten-Free Platform',
+  type: 'image/jpeg',
 };
 
 export async function getRootLayoutMetadata({ locale }: { locale: string }): Promise<Metadata> {
@@ -50,7 +51,7 @@ export async function getRootLayoutMetadata({ locale }: { locale: string }): Pro
             card: 'summary_large_image',
             title: t('title.default'),
             description: t('description'),
-            images: ['/og-image.jpg'],
+            images: [`${BASE_URL}/og-image.jpg`],
         },
         icons: { icon: '/favicon.ico', apple: '/images/logo.png' },
         manifest: '/manifest',
