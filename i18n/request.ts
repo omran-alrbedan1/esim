@@ -3,27 +3,29 @@ import {routing} from './routing';
 
 export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<string | undefined>}) => {
   let locale = await requestLocale;
-  
+
   if (!locale || !routing.locales.includes(locale as any)) {
     locale = routing.defaultLocale;
   }
-  
+
   const [
     common,
-    navigation, 
+    navigation,
     home,
     about,
-    customDesign,
     contact,
+    policies,
     footer,
+    layout,
   ] = await Promise.all([
     import(`../messages/${locale}/common.json`),
     import(`../messages/${locale}/navigation.json`),
     import(`../messages/${locale}/home.json`),
     import(`../messages/${locale}/about.json`),
-    import(`../messages/${locale}/custom-design.json`),
     import(`../messages/${locale}/contact.json`),
+    import(`../messages/${locale}/policies.json`),
     import(`../messages/${locale}/footer.json`),
+    import(`../messages/${locale}/layout.json`),
   ]);
 
   return {
@@ -33,9 +35,10 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
       navigation: navigation.default,
       home: home.default,
       about: about.default,
-      customDesign: customDesign.default,
       contact: contact.default,
+      policies: policies.default,
       footer: footer.default,
+      layout:layout.default
     },
     timeZone: 'Asia/Amman'
   };

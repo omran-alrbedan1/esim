@@ -1,159 +1,188 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
-import { MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BRAND_IMAGES } from '@/constants/images';
-import { FaFacebookF } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
+import { motion, useInView, type Variants } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+import { IMAGES } from "@/constants/images";
+import SocialSphere from '@/components/SocialSphere';
 
 export default function Footer() {
-  const t = useTranslations('footer');
-  const locale = useLocale();
-  const navLinks = [
-    { key: 'about', href: '/about' },
-    { key: 'custom-design', href: '/custom-design' },
-    { key: 'contact', href: '/contact' },
-  ] as const;
+  const currentYear = new Date().getFullYear();
+  const t = useTranslations('layout.footer');
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: '-50px' });
 
+  const socialLinks = [
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        </svg>
+      ),
+      href: '#',
+      label: t('social.facebook'),
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+        </svg>
+      ),
+      href: '#',
+      label: t('social.twitter'),
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+        </svg>
+      ),
+      href: '#',
+      label: t('social.instagram'),
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+      ),
+      href: '#',
+      label: t('social.linkedin'),
+    }
+  ];
+
+  const footerLinks = [
+    { label: t('links.about'), href: '#about' },
+    { label: t('links.terms'), href: '#' },
+    { label: t('links.privacy'), href: '#' },
+    { label: t('links.contact'), href: '#contact' },
+  ];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut' as const,
+      },
+    },
+  };
+
+  const linkVariants: Variants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.08,
+        duration: 0.4,
+      },
+    }),
+  };
 
   return (
-    <footer className="bg-gray-900 text-white pt-12 md:pt-16 pb-6 md:pb-8 px-4 sm:px-6" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="max-w-6xl mx-auto">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-12">
-          
-          {/* Logo and Brand - Column 1 */}
-          <div className="text-center sm:text-start"> 
-            <div className="mb-5 flex justify-center sm:justify-start">
-              <Image 
-                src={BRAND_IMAGES.logo2} 
-                alt="Rovana Jewelry" 
-                width={120}
-                height={40}
-                className="h-auto w-auto"
-                priority
+    <footer
+      ref={sectionRef}
+      className="bg-[#F9F9F9] border-t border-gray-100 py-8 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+    >
+      <motion.div
+        className="max-w-7xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        {/* Stack vertically on mobile, row on larger screens */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6">
+          {/* Logo */}
+          <motion.div variants={itemVariants}>
+            <Link href="/" className="flex items-center gap-2 shrink-0">
+              <Image
+                src={IMAGES.logo}
+                width={180}
+                height={124}
+                alt='gluten'
+                className="w-auto h-12 sm:h-16"
               />
-            </div>
-            <p className="text-sm text-gray-300 leading-relaxed mb-5 max-w-xs mx-auto sm:mx-0">
-              {t('description')}
-            </p>
-            
-            {/* Social Media Links */}
-            <div className="flex gap-3 justify-center sm:justify-start">
-              <a 
-                href="https://www.facebook.com/share/1BLpnTQo49/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
-                aria-label="Facebook"
-              >
-                <FaFacebookF className="w-4 h-4 text-white" />
-              </a>
-              <a 
-                  href="https://www.instagram.com/rovana_jewellery2?igsh=MXFpcjB3NDI0bTluNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
-                aria-label="Instagram"
-              >
-                <FaInstagram className="w-4 h-4 text-white" />
-              </a>
-              <a 
-                href="mailto:rovanajewellery@gmail.com"
-                className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4 text-white" />
-              </a>
-            </div>
-          </div>
+            </Link>
+          </motion.div>
 
-          {/* Quick Links - Column 2 */}
-          <div className="text-center sm:text-start">
-            <h3 className="text-base font-serif font-light mb-4 text-[#E6C687] uppercase tracking-wider">
-              {t('navigation.title')}
-            </h3>
-            <ul className="space-y-2.5">
-              {navLinks.map(({ key, href }) => (
-                <li key={key}>
-                  <Link 
-                    href={href}
-                    className="inline-flex items-center gap-1 text-sm text-gray-300 hover:text-[#E6C687] transition-colors duration-200 group"
-                  >
-                    <ChevronRight className={`w-3 h-3 opacity-0 transition-all duration-200 ${locale === 'ar' ? '-mr-4 group-hover:opacity-100 group-hover:mr-0 rotate-180' : '-ml-4 group-hover:opacity-100 group-hover:ml-0'}`} />
-                    <span className={`transition-transform duration-200 ${locale === 'ar' ? 'group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}>
-                      {t(`navigation.${key}`)}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Navigation Links - Stack on mobile, row on medium+ */}
+          <nav className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {footerLinks.map((link, idx) => (
+              <motion.a
+                key={link.label}
+                custom={idx}
+                variants={linkVariants}
+                initial="hidden"
+                animate="visible"
+                href={link.href}
+                className="text-sm text-gray-500 hover:text-[#8C936E] transition-colors font-medium"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+          </nav>
 
-          {/* Contact Information - Column 3 */}
-          <div className="text-center sm:text-start">
-            <h3 className="text-base font-serif font-light mb-4 text-[#E6C687] uppercase tracking-wider">
-              {t('contact.title')}
-            </h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 justify-center sm:justify-start group">
-                <MapPin className="w-4 h-4 text-[#E6C687] flex-shrink-0" />
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Al-Salihiya+Damascus+Syria"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-gray-300 group-hover:text-white transition-colors duration-200"
-                >
-                  {t('contact.address')}
-                </a>
-              </div>
-              <div className="flex items-center gap-3 justify-center sm:justify-start group">
-                <Mail className="w-4 h-4 text-[#E6C687] flex-shrink-0" />
-                <a 
-                  href="mailto:rovanajewellery@gmail.com"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  {t('contact.email')}
-                </a>
-              </div>
-              <div className="flex items-center gap-3 justify-center sm:justify-start group">
-                <Phone className="w-4 h-4 text-[#E6C687] flex-shrink-0" />
-                <a 
-                  href="tel:+963981117927"
-                  className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-                  dir="ltr"
-                >
-                  {t('contact.phone')}
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Business Hours - Column 4 */}
-          <div className="text-center sm:text-start">
-            <h3 className="text-base font-serif font-light mb-4 text-[#E6C687] uppercase tracking-wider">
-              {t('business.title')}
-            </h3>
-            <div className="space-y-3">
-              <div className="space-y-1">
-                <p className="text-sm text-gray-400">{t('business.sundayThursday')}</p>
-                <p className="text-sm text-gray-300 font-medium">{t('business.sundayThursdayHours')}</p>
-              </div>
-            </div>
+          {/* Social Links - 3D Spheres */}
+          <div className="flex items-center justify-center gap-4">
+            {socialLinks.map((social, idx) => (
+              <SocialSphere
+                key={social.label}
+                icon={social.icon}
+                href={social.href}
+                label={social.label}
+                delay={0.3}
+                index={idx}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-6 md:pt-8 mt-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-gray-400 text-center md:text-left">
-              {t('copyright')}
+        {/* Bottom Bar - Stack on mobile, row on larger screens */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-8 pt-6 border-t border-gray-200"
+        >
+          <div className="flex flex-col-reverse md:-my-12 sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-400 font-medium text-center sm:text-left">
+              {t('copyright', { year: currentYear })} <span className="text-[#8C936E] font-bold">Beyond Gluten</span>. {t('allRightsReserved')}
             </p>
+
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-xs text-gray-400 font-medium">{t('poweredBy')}</span>
+              <Link
+                href="https://futxtech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src={'/images/futurex-logo.png'}
+                  alt="Future X"
+                  width={80}
+                  height={30}
+                  className="h-16 w-auto md:h-32"
+                />
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }

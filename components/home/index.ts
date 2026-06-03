@@ -1,0 +1,8 @@
+export {default as Hero} from './Hero'
+export {default as WhyChooseUs} from './WhyChooseUs'
+export {default as InnovativeShop} from './InnovativeShop'
+export {default as AwesomeFeatures} from './AwesomeFeatures'
+export {default as AppDownload} from './AppDownload'
+export {default as AppScreenshots} from './AppScreenshots'
+export {default as ClientReviews} from './ClientReviews'
+export {default as ContactUs} from './ContactUs'

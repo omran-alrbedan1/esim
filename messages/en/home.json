@@ -1,252 +1,145 @@
 {
   "metadata": {
-    "title": "Rovana Jewelry — Gold & Diamonds",
-    "description": "Discover Rovana Jewelry in Damascus: gold, diamonds, and custom designs. Browse our collections or contact us for bespoke jewelry.",
-    "keywords": ["gold jewelry Damascus", "custom jewelry Syria", "diamond rings Damascus", "luxury jewelry Damascus", "bespoke jewelry Syria", "Rovana Jewelry"]
+    "title": "Beyond Gluten | Integrated Gluten-Free Platform",
+    "description": "The first platform in the Arab world combining safe shopping, a supportive community, and medically approved awareness content for celiac patients. Join now for free!",
+    "keywords": "gluten-free platform, gluten-free shopping, celiac community, certified gluten-free products, beyond gluten home",
+    "openGraph": {
+      "title": "Beyond Gluten - Shop, Connect, and Learn with Confidence",
+      "description": "The first integrated platform for gluten-free products and services in the Arab world"
+    }
   },
   "hero": {
-    "eyebrow": "Rovana Jewelry",
-    "title": "Timeless Elegance",
-    "title1": "Timeless Elegance",
-    "subtitle": "Syria's trusted jewelry destination crafting heirloom pieces in the heart of Damascus.",
-    "subtitle1": "Exquisite designs and custom jewelry with generational expertise.",
-    "subtitle2": "Family heritage in fine jewelry craftsmanship",
-    "cta": "Explore Collection",
-    "explore": "Explore Collection",
-    "contact": "Contact Us"
-  },
-  "welcome": {
-    "title": "Rovana Jewelry",
-    "description": "Rovana Jewelry offers exclusive designs of gold, diamonds, rings, pendants and bracelets, with custom jewelry design service based in Damascus, Syria.",
-    "subtitle": "Rovana Jewelry: gold, diamonds, rings, pendants, bracelets and custom jewelry design in Damascus."
-  },
-  "specialOffers": {
-    "tag": "Special Offer",
-    "pendant": {
-      "title": "Elegant Gold Pendant",
-      "cta": "Shop Now"
-    },
-    "ring": {
-      "title": "Exquisite Diamond Ring",
-      "cta": "Shop Now"
-    }
-  },
-  "featured": {
-    "title": "Featured Collection",
-    "products": {
-      "moonPendant": "Moon Pendant",
-      "roseRing": "Rose Gold Ring",
-      "crystalRing": "Crystal Ring",
-      "yardEarrings": "Yard Earrings"
-    }
-  },
-  "categories": {
-    "title": "Shop by Category"
-  },
-  "special": {
-    "title": "Special Products",
-    "products": {
-      "longPendant": "Long Pendant",
-      "heartRing": "Heart Ring",
-      "vintageRing": "Vintage Ring",
-      "diamondEarrings": "Diamond Earrings"
-    }
-  },
-  "wedding": {
-    "title": "Wedding Collection",
-    "cta": "Explore Wedding"
-  },
-  "testimonials": {
-    "title": "What Our Clients Say",
-    "description": "We take pride in creating exceptional jewelry that brings joy to our customers. Here's what some of our satisfied clients have to say about their experience with our collections and craftsmanship.",
-    "saif": {
-      "name": "Saif Kilani",
-      "text": "Praise be to God for the service, honesty, and truth in dealing. I have been dealing with them for over 4 years. May God bless them in their business."
-    },
-    "tala": {
-      "name": "Tala Adas",
-      "text": "Honestly, one of the most comfortable and best gold stores I've dealt with. Dealing with them is very comfortable and dignified, they always listen to the details I request and make the piece exactly as I want. They are also very committed to delivery times and never delay. Besides that, their style is service-oriented and kind, and I truly feel confident when dealing with them. I highly recommend them 👍😍"
-    },
-    "anas": {
-      "name": "Anas Yacoub",
-      "text": "One of the best jewelry galleries in Damascus, dignified and kind dealing, with a distinguished collection of gold and jewelry. I recommend everyone to try them."
-    }
-  },
-  "blog": {
-    "title": "From Our Blog"
+    "tag": "Gluten-Free, Worry-Free",
+    "title": "Live <green>Beyond Gluten</green>. Live Limitlessly.",
+    "subtitle": "Your all-in-one companion for a safe gluten-free life. Discover trusted places, safe products, expert support, and everyday peace of mind.",
+    "cta_primary": "Get Started",
+    "cta_secondary": "Learn More",
+    "scroll_indicator": "Scroll Down"
   },
   "features": {
-    "shipping": {
-      "title": "Free Shipping",
-      "description": "On orders over $50"
-    },
-    "moneyback": {
-      "title": "Money Back",
-      "description": "30-day return policy"
-    },
-    "checkout": {
-      "title": "Secure Checkout",
-      "description": "100% secure payment"
-    },
-    "glasses": {
-      "title": "Expert Service",
-      "description": "Professional guidance"
-    }
-  },
-  "newsletter": {
-    "title": "Stay Updated",
-    "description": "Subscribe to our newsletter for exclusive offers and new arrivals",
-    "placeholder": "Enter your email",
-    "cta": "Subscribe"
-  },
-  "collection": {
-    "eyebrow": "The Collection",
-    "title1": "Pieces That",
-    "title2": "Live On",
-    "subtitle": "A curated selection of rings, necklaces, bracelets and statement pieces — each a quiet promise of craftsmanship.",
-    "cta": "Inquire About a Piece",
-    "empty": "New pieces in this collection are arriving soon.",
-    "previewCategory": "Category",
-    "inquire": "Inquire About This Piece"
-  },
-  "services": {
-    "eyebrow": "Our Services",
-    "title1": "Crafted for",
-    "title2": "You",
-    "subtitle": "From custom designs to expert repairs, we offer comprehensive jewelry services tailored to your needs.",
-    "items": {
-      "custom": {
-        "title": "Custom Design",
-        "description": "Bring your vision to life with our bespoke jewelry design service."
+    "title": "Why Choose Us",
+    "items": [
+      {
+        "title": "100% Gluten-Free",
+        "description": "Certified gluten-free products you can trust."
       },
-      "repair": {
-        "title": "Expert Repair",
-        "description": "Professional restoration and maintenance for your precious pieces."
+      {
+        "title": "Premium Ingredients",
+        "description": "Only the finest, natural ingredients go into our products."
       },
-      "appraisal": {
-        "title": "Valuation",
-        "description": "Accurate appraisals for insurance, estate, or resale purposes."
-      },
-      "consultation": {
-        "title": "Styling Consultation",
-        "description": "Expert guidance on selecting the perfect piece for any occasion."
+      {
+        "title": "Made with Care",
+        "description": "Every item is crafted with attention to detail and love."
       }
-    }
+    ]
   },
-  "heritage": {
-    "eyebrow": "Our Heritage",
-    "title1": "Three Generations",
-    "title2": "of Excellence",
-    "subtitle": "Our commitment to craftsmanship and trust has remained unwavering through the years.",
-    "since": "Since",
-    "founderCaption": "Our founder outside the original shop",
-    "chapter1": "Chapter One",
-    "chapter1Title1": "The Beginning",
-    "chapter1Title2": "in Jaffa",
-    "chapter1Text1": "Our story began with a commitment to exceptional craftsmanship and honest business practices.",
-    "chapter1Text2": "The foundation was built on trust, quality, and a deep respect for the art of jewelry making - values that continue to guide us today.",
-    "visitUs": "Visit Our Boutique",
-    "chapter2": "Chapter Two",
-    "chapter2Title1": "A New Era",
-    "chapter2Title2": "in Damascus",
-    "chapter2Text": "In the 1970s, we expanded our operations to Damascus, Syria, bringing our expertise and reputation for quality to the growing capital city.",
-    "marketLabel": "Goldsmith's Market",
-    "marketCaption": "The historic Goldsmith's Market in old Damascus",
-    "address": "Address",
-    "phone": "Phone",
-    "getDirections": "Get Directions",
-    "timeline": {
-      "1921": {
-        "title": "The Beginning",
-        "text": "Founded in Jaffa, establishing our reputation for exceptional craftsmanship."
+  "awesomeFeatures": {
+    "tag": "Features",
+    "title": "Awesome Features",
+    "leftItems": [
+      {
+        "title": "Gluten-Free Restaurant Guide",
+        "description": "Find trusted gluten-free restaurants with safety ratings and real reviews.",
+        "icon": "utensils"
       },
-      "1970s": {
-        "title": "New Era",
-        "text": "Expanded to Damascus, bringing our expertise to Syria's growing capital."
+      {
+        "title": "Certified Gluten-Free Products",
+        "description": "Explore gluten-free products, vitamins, and supplements.",
+        "icon": "shopping-bag"
       },
-      "2000s": {
-        "title": "Modern Legacy",
-        "text": "Established our flagship boutique in Sweifieh, becoming a landmark destination."
-      },
-      "today": {
-        "title": "Continuing Tradition",
-        "text": "Serving a new generation while honoring the timeless values of our founders."
+      {
+        "title": "Expert Consultations & Family Support",
+        "description": "Get expert guidance for daily gluten-free living and safe travel.",
+        "icon": "users"
       }
-    }
+    ],
+    "rightItems": [
+      {
+        "title": "Medication Safety Scanner",
+        "description": "Scan or search medications to check if they are gluten-free.",
+        "icon": "scan"
+      },
+      {
+        "title": "Smart Gluten-Free Vending Machines",
+        "description": "Locate gluten-free vending machines and purchase products directly from the app.",
+        "icon": "smartphone"
+      },
+      {
+        "title": "Gluten-Free Establishment Accreditation System",
+        "description": "Discover certified gluten-free restaurants, schools, and facilities.",
+        "icon": "building-2"
+      }
+    ],
+    "imageAlt": "App features showcase"
   },
-  "whyChooseUs": {
-    "eyebrow": "Why Choose Us",
-    "title1": "Trust Woven",
-    "title2": "Into Gold",
-    "subtitle": "Discover what makes Rovana Jewelry the preferred choice for discerning clients.",
-    "reasons": {
-      "heritage": {
-        "title": "Century of Heritage",
-        "description": "Over 100 years of trusted expertise in fine jewelry craftsmanship."
+  "innovativeShop": {
+    "title": "An Innovative Way to Shop",
+    "description": "When you join <bold>Beyond Gluten</bold>, you'll enjoy a massive, upgraded shopping method through our multi-virtual experience.",
+    "googlePlay": "Get it on Google Play",
+    "appStore": "Download on the App Store"
+  },
+  "appDownload": {
+    "title": "App Download",
+    "stats": [
+      {
+        "value": "1000",
+        "label": "App Downloads"
       },
-      "craftsmanship": {
-        "title": "Master Craftsmen",
-        "description": "Our skilled artisans bring decades of experience to every piece."
+      {
+        "value": "100",
+        "label": "Happy Clients"
       },
-      "quality": {
-        "title": "Uncompromising Quality",
-        "description": "Only the finest materials and strict quality standards for all our pieces."
+      {
+        "value": "400",
+        "label": "Active Accounts"
       },
-      "service": {
-        "title": "Personal Service",
-        "description": "Individualized attention and guidance throughout your jewelry journey."
+      {
+        "value": "200",
+        "label": "Total App Rates"
       }
-    }
+    ]
   },
   "cta": {
-    "title1": "Ready to Find",
-    "title2": "Your Perfect Piece?",
-    "body": "Visit our boutique in Damascus or contact us to begin your journey with Rovana Jewelry.",
-    "button": "Get in Touch"
+    "title": "Ready to Taste the Difference?",
+    "button": "Contact Us"
   },
-  "category": {
-    "all": "All",
-    "rings": "Rings",
-    "necklaces": "Necklaces",
-    "bracelets": "Bracelets",
-    "pendants": "Pendants",
-    "earrings": "Earrings"
+  "clientReviews": {
+    "tag": "Testimonials",
+    "title": "What Our Clients Say",
+    "previous": "Previous testimonial",
+    "next": "Next testimonial",
+    "imageAlt": "Client review",
+    "goToReview": "Go to review {index}",
+    "reviews": [
+      {
+        "text": "Love the app!! Looking forward to more of my favorite stores being added so I can use it more. The interface is incredibly intuitive and the gluten-free verification gives me peace of mind every time I shop.",
+        "name": "Jamal Ahmed",
+        "date": "25/11/2026"
+      },
+      {
+        "text": "This app has completely changed how I manage my gluten sensitivity. The restaurant scanner and safety check features give me real peace of mind when dining out with family or traveling abroad. Highly recommend!",
+        "name": "Sarah Jenkins",
+        "date": "14/04/2026"
+      },
+      {
+        "text": "The medication scanner feature is revolutionary! I can finally check if my prescriptions are gluten-free without calling the pharmacy. The community support is amazing too.",
+        "name": "Michael Chen",
+        "date": "03/02/2026"
+      }
+    ]
   },
-  "viewDetail": "View Detail",
-  "empty": "No items found",
-  "footer": {
-    "description": "Crafting exquisite custom jewelry since 1948. Your vision, our expertise.",
-    "contact": {
-      "title": "Contact Us",
-      "address": "Al-Salihiya, Next to Abou Abdo Juice, Damascus",
-      "email": "rovanajewellery@gmail.com",
-      "phone": "0981 117 927"
-    },
-    "navigation": {
-      "title": "Quick Links",
-      "about": "About Us",
-      "contact": "Contact",
-      "custom-design": "Custom Design",
-      "faq": "FAQ"
-    },
-    "information": {
-      "title": "Information",
-      "search": "Search",
-      "about": "About Us",
-      "contact": "Contact",
-      "faq": "FAQ",
-      "sizeChart": "Size Chart"
-    },
-    "account": {
-      "title": "My Account",
-      "privacy": "Privacy Policy",
-      "refund": "Refund Policy",
-      "shipping": "Shipping Policy",
-      "terms": "Terms of Service"
-    },
-    "app": {
-      "title": "Our App"
-    },
-    "copyright": "© 2026 Rovana Jewelry. All Rights Reserved."
+  "contactUs": {
+    "tag": "Contact Us",
+    "title": "Get In Touch With Us!",
+    "imageAlt": "Contact us illustration",
+    "successMessage": "Thank you! Your message has been sent successfully.",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "Your Name",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "Your Email",
+    "messageLabel": "Your Message",
+    "messagePlaceholder": "Your Message",
+    "sending": "Sending...",
+    "submitButton": "Send Now"
   }
 }

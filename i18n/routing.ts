@@ -8,14 +8,8 @@ export const routing = defineRouting({
   pathnames: {
     '/': '/',
     '/about': '/about',
-    '/custom-design': '/custom-design',
     '/contact': '/contact',
-    '/blog': '/blog',
     '/policies': '/policies',
-    '/collections': '/collections',
-    '/collections/pendants': '/collections/pendants',
-    '/collections/rings': '/collections/rings',
-    '/collections/wedding': '/collections/wedding',
   }
 });
 

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": {
+      "default": "Beyond Gluten | أول منصة متكاملة لمنتجات وخدمات الخالي من الجلوتين",
+      "template": "%s | Beyond Gluten"
+    },
+    "description": "منصة Beyond Gluten الأولى في العالم العربي لمنتجات وخدمات Gluten-Free. تسوق آمن، مجتمع داعم، ومحتوى معتمد طبياً لمرضى السيلياك والمهتمين بالصحة.",
+    "keywords": "خالي من الجلوتين, منتجات جلوتين فري, سيلياك, حساسية القمح, مطاعم خالية من الجلوتين, وصفات بدون جلوتين, Beyond Gluten, gluten free jordan, gluten free arabic"
+  },
+  "footer": {
+    "social": {
+      "facebook": "فيسبوك",
+      "twitter": "تويتر",
+      "instagram": "انستغرام",
+      "linkedin": "لينكد إن"
+    },
+    "links": {
+      "about": "عن المنصة",
+      "terms": "الشروط والأحكام",
+      "privacy": "سياسة الخصوصية",
+      "contact": "اتصل بنا"
+    },
+    "copyright": "حقوق النشر © {year}",
+    "allRightsReserved": "جميع الحقوق محفوظة.",
+    "poweredBy": "مدعوم من"
+  }
+}

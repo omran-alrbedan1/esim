@@ -1,27 +1,4 @@
 {
-  "description": "Rovana Jewelry crafts exquisite custom jewelry blending traditional craftsmanship with modern elegance from our Damascus boutique.",
-  "contact": {
-    "title": "Contact Us",
-    "address": "Al-Salihiya, Next to Abou Abdo Juice, Damascus",
-    "email": "rovanajewellery@gmail.com",
-    "phone": "0981 117 927",
-    "hours": "Sat-Thu: 10:00 - 20:30"
-  },
-  "navigation": {
-    "title": "Quick Links",
-    "about": "About Us",
-    "contact": "Contact",
-    "custom-design": "Custom Design"
-  },
-  "business": {
-    "title": "Business Hours",
-    "sundayThursday": "Sunday - Thursday",
-    "friday": "Friday",
-    "saturday": "Saturday",
-    "closed": "Closed",
-    "sundayThursdayHours": "10:00 AM - 8:30 PM",
-    "saturdayHours": "11:00 AM - 5:00 PM"
-  },
-  "copyright": "© 2026 Rovana Jewelry. All Rights Reserved.",
-  "poweredBy": "Powered by"
+  "copyright": "© 2026 Beyond Gluten. All rights reserved.",
+  "tagline": "Gluten-Free, Full of Flavor"
 }

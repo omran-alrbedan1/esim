@@ -1,12 +1,6 @@
 {
   "home": "الرئيسية",
-  "about": "إرثنا",
-  "contact": "تواصل معنا",
-  "customDesign": "احجز تصميم خاص",
-  "blog": "المدونة",
-  "policies": "سياسة الشراء",
-  "common": {
-    "fineSince": "فاخر منذ",
-    "callUs": "اتصل بنا"
-  }
+  "about": "من نحن",
+  "contact": "اتصل بنا",
+  "policies": "سياسة الخصوصية"
 }

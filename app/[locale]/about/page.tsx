@@ -1,24 +1,21 @@
+import type { Metadata } from 'next';
+import { getAboutPageMetadata } from '@/lib/metadata';
+import { AboutHero, AboutMission, AboutVision } from '@/components/about';
 
-import { 
-  HeroSection, 
-  StorySection, 
-  MissionVisionSection, 
-  HeritageSection 
-} from '@/components/about';
-import { getAboutMetadata } from '../metadata/about';
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  return getAboutMetadata(locale);
+export async function generateMetadata({
+  params: { locale }
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  return getAboutPageMetadata({ locale });
 }
 
 export default function AboutPage() {
   return (
-    <div className="bg-white font-sans text-gray-800 min-h-screen">
-      <HeroSection />
-      <StorySection />
-      <MissionVisionSection />
-      <HeritageSection />
-    </div>
+    <main className="min-h-screen bg-[#F9F9F9]">
+      <AboutHero />
+      <AboutMission />
+      <AboutVision />
+    </main>
   );
 }

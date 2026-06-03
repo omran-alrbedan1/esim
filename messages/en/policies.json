@@ -1,66 +1,32 @@
 {
-  "policies": "Purchase Policies",
-  "eyebrow": "Purchase Policies",
-  "hero": {
-    "title": "Our Commitment to You",
-    "subtitle": "Clear policies and transparent processes to ensure your confidence in every purchase."
+  "metadata": {
+    "title": "Privacy Policy | Beyond Gluten",
+    "description": "Beyond Gluten Platform Privacy Policy: How we collect, use, and protect your data. We are committed to the highest standards of security and transparency.",
+    "keywords": "privacy policy beyond gluten, terms of use, data protection gluten free platform, privacy policy",
+    "robots": "noindex, follow"
   },
-  "sections": {
-    "pricing": {
-      "title": "Pricing Policy",
-      "text": "All prices are quoted in US Dollars (USD) and are based on current gold market rates plus craftsmanship fees. Prices are subject to change based on market fluctuations."
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: May 2026",
+  "sections": [
+    {
+      "title": "Information We Collect",
+      "body": "We collect information you provide directly to us, such as when you contact us via our website forms. This may include your name and email address."
     },
-    "confirmation": {
-      "title": "Order Confirmation",
-      "text": "Custom orders require a 50% deposit to begin work. The remaining balance is due upon completion and before delivery. We provide detailed receipts for all transactions."
+    {
+      "title": "How We Use Your Information",
+      "body": "We use the information we collect to respond to your inquiries, improve our website and products, and send occasional updates if you have opted in."
     },
-    "exchange": {
-      "title": "Exchange Policy",
-      "text": "Exchanges are permitted within 7 days of purchase for items of equal or greater value. Items must be in original condition with all tags and packaging intact."
+    {
+      "title": "Data Protection",
+      "body": "We implement appropriate security measures to protect your personal information. We do not sell, trade, or share your personal data with third parties except as required by law."
     },
-    "returns": {
-      "title": "Return Policy",
-      "text": "Custom-designed pieces are non-returnable. Ready-made pieces may be returned within 3 days of purchase in original condition. A 15% restocking fee applies."
+    {
+      "title": "Cookies",
+      "body": "Our website may use cookies to enhance your browsing experience. You can control cookie settings through your browser preferences."
     },
-    "custom": {
-      "title": "Custom Design Policy",
-      "text": "Custom designs require detailed consultation and approval at each stage. Once production begins, modifications may incur additional charges. Final approval is required before delivery."
-    },
-    "shipping": {
-      "title": "Shipping & Delivery",
-      "text": "Local delivery within Damascus is complimentary. International shipping is available through secure courier services. All shipments are fully insured."
-    },
-    "warranty": {
-      "title": "Warranty & Service",
-      "text": "All pieces come with a lifetime warranty against manufacturing defects. Complimentary cleaning and inspection services are provided for the first year."
-    },
-    "payment": {
-      "title": "Payment Methods",
-      "text": "We accept cash, bank transfers, and major credit cards. Payment plans are available for purchases over 500 USD with approved credit."
+    {
+      "title": "Contact",
+      "body": "If you have any questions about this privacy policy, please contact us at hello@beyondgluten.com."
     }
-  },
-  "faq": {
-    "eyebrow": "Policy Questions",
-    "title": "Frequently Asked Questions",
-    "1": {
-      "q": "Can I modify my custom design after production starts?",
-      "a": "Modifications after production begins may be possible but will incur additional charges and delays. Major changes may require starting over."
-    },
-    "2": {
-      "q": "Do you offer payment plans for large purchases?",
-      "a": "Yes, we offer flexible payment plans for purchases over 500 USD. Terms and conditions apply."
-    },
-    "3": {
-      "q": "How do I care for my jewelry?",
-      "a": "We provide detailed care instructions with each purchase. Complimentary cleaning services are available for the first year."
-    },
-    "4": {
-      "q": "What happens if my jewelry needs repair?",
-      "a": "We offer repair services for all our pieces. Warranty covers manufacturing defects, while other repairs are quoted separately."
-    },
-    "5": {
-      "q": "Can I track my custom order progress?",
-      "a": "Yes, we provide regular updates and photos throughout the custom design process. You can also contact us anytime for status updates."
-    }
-  }
+  ]
 }

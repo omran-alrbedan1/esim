@@ -1,5 +1,17 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Beyond Gluten
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+Gluten-Free, Full of Flavor.
+
+## Project Structure
+
+- `app/[locale]/` — Pages (home, about, contact, policies)
+- `components/` — Shared components (Header, Footer, LanguageSwitcher)
+- `constants/` — Site configuration
+- `messages/{en,ar}/` — Translation JSON files
+- `i18n/` — next-intl routing and request config
+
+## Commands
+
+- `npm run dev` — Start development server
+- `npm run build` — Production build
+- `npm run lint` — Run ESLint

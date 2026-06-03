@@ -1,60 +1,46 @@
 {
   "metadata": {
-    "title": "Our Story | Rovana Jewelry Heritage",
-    "description": "Discover Rovana Jewelry's heritage of trust and craftsmanship based in Damascus, Syria.",
-    "keywords": ["Rovana heritage", "Syria jewelry history", "Damascus jewelers", "family jewelry business Syria"]
+    "title": "About Us | Beyond Gluten",
+    "description": "Learn about the story of Beyond Gluten and our vision for a gluten-free world. Developed by FutureX Digital Solutions in Jordan.",
+    "keywords": "about beyond gluten, beyond gluten team, futurex jordan, gluten free platform about us",
+    "openGraph": {
+      "title": "About Us - Beyond Gluten | Our Vision & Mission",
+      "description": "Towards a world where food allergies are not a barrier. Get to know our team and values."
+    }
   },
-  "eyebrow": "Our Story",
-  "title1": "A Legacy of",
-  "title2": "Trust & Craftsmanship",
-  "subtitle": "From our first branch to our second — serving Damascus with quality and trust.",
-  "quote": "Excellence in jewelry is not just about gold and gems, but about the trust we build with every piece we create.",
-  "video": {
+  "title": "About Beyond Gluten",
+  "subtitle": "Our journey to bring gluten-free joy to everyone",
+  "mission": {
+    "title": "Our Mission",
+    "body": "At Beyond Gluten, we believe that going gluten-free shouldn't mean compromising on taste. Our mission is to create delicious, high-quality gluten-free products that everyone can enjoy — whether you have celiac disease, gluten sensitivity, or simply choose a gluten-free lifestyle."
+  },
+  "story": {
     "title": "Our Story",
-    "description1": "At Rovana Jewelry, every piece tells a story of tradition, quality, and artistic excellence passed down through generations.",
-    "description2": "We take pride in crafting jewelry that blends timeless elegance with modern design, creating pieces that celebrate life's most precious moments."
+    "body": "Founded with a passion for baking and a commitment to inclusivity, Beyond Gluten started in a small kitchen with a simple goal: make gluten-free food that tastes as good as the real thing. Today, we continue to innovate and expand our product line, bringing smiles to tables everywhere."
   },
-  "missionVision": {
-    "eyebrow": "Our Purpose",
-    "title1": "Our Mission &",
-    "title2": "Vision",
-    "subtitle": "Guided by tradition, driven by excellence, and committed to creating timeless pieces that celebrate life's most precious moments.",
-    "missionTitle": "Our Mission",
-    "missionText": "To create exceptional jewelry that combines traditional craftsmanship with contemporary design, providing our clients with timeless pieces that celebrate life's most precious moments while maintaining the highest standards of quality and integrity.",
-    "visionTitle": "Our Vision",
-    "visionText": "To be Syria's most trusted and beloved jewelry brand, continuing our century-long legacy of excellence while embracing innovation and sustainable practices that will benefit future generations."
+  "vision": {
+    "title": "Our Vision",
+    "body": "A world where gluten-free living is seamless, delicious, and accessible to everyone everywhere. We envision a future where dietary restrictions never hold anyone back from enjoying life's simple pleasures."
   },
-  "timelineEyebrow": "Our Journey",
-  "timelineTitle1": "A Century",
-  "timelineTitle2": "of Excellence",
-  "visit": "Visit Our Boutique",
-  "heritage": {
-    "eyebrow": "Our Heritage",
-    "title1": "A Story of",
-    "title2": "Growth",
-    "subtitle": "From our first branch to our second, we continue to serve our customers with the same dedication and craftsmanship.",
-    "since": "Since",
-    "founderCaption": "Rovana Jewelry — a name built on trust",
-    "visitUs": "Visit Our Boutique",
-    "chapter1": "Chapter One",
-    "chapter1Title1": "Our First",
-    "chapter1Title2": "Branch",
-    "chapter1Text1": "We opened our first branch on Khaled Bin Al-Waleed Street with a simple vision: to provide our customers with the finest gold and diamond jewelry, crafted with care and sold with honesty.",
-    "chapter1Text2": "Word spread quickly, and our commitment to quality and customer trust became the foundation of everything we do.",
-    "chapter1Address": "Khaled Bin Al-Waleed Street, Before Al-Kindi Hospital Entrance, Damascus",
-    "chapter1Phone2": "0955 530 045",
-    "chapter1Phone2Label": "Dabbas",
-    "chapter1Phone3": "0968 465 182",
-    "chapter1Phone3Label": "Alghabra",
-    "chapter1PhoneLandline": "011 - 2210 383",
-    "chapter2": "Chapter Two",
-    "chapter2Title1": "Our Second",
-    "chapter2Title2": "Branch",
-    "chapter2Text": "As our family of loyal customers grew, we opened our second branch in Al-Salihiya to better serve you. A new space, but the same values — exceptional quality, honest dealing, and a passion for fine jewelry.",
-    "marketCaption": "Our second branch in Al-Salihiya, Next to Abou Abdo Juice",
-    "address": "Address",
-    "addressText": "Al-Salihiya, Next to Abou Abdo Juice, Damascus",
-    "phone": "Phone",
-    "getDirections": "Get Directions"
+  "values": {
+    "title": "What We Stand For",
+    "items": [
+      {
+        "title": "Quality First",
+        "description": "We never compromise on ingredients or taste. Every product meets our rigorous quality standards before reaching your table."
+      },
+      {
+        "title": "Innovation",
+        "description": "We continuously innovate to create products that surprise and delight our customers with new flavors and experiences."
+      },
+      {
+        "title": "Community",
+        "description": "We build a supportive community where everyone feels welcome, understood, and empowered in their gluten-free journey."
+      },
+      {
+        "title": "Trust",
+        "description": "Transparency and integrity guide everything we do, from sourcing ingredients to packaging and delivery."
+      }
+    ]
   }
 }
