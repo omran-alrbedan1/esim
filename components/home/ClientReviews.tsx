@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import { HOME_IMAGES } from '@/constants/images';
 import { useTranslations, useLocale } from 'next-intl';
 import {
@@ -28,11 +28,15 @@ import {
 export default function ClientReviews() {
   const [activeReview, setActiveReview] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const t = useTranslations('home.clientReviews');
   const locale = useLocale();
   const isRTL = locale === 'ar';
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: false, margin: '-100px' });
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -90,7 +94,7 @@ export default function ClientReviews() {
         <motion.div
           variants={clientReviewsContainerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={isVisible ? "visible" : "hidden"}
         >
           <motion.div
             variants={clientReviewsItemVariants}
@@ -113,13 +117,11 @@ export default function ClientReviews() {
             {t('title')}
           </motion.h2>
 
-          {/* Mobile: Stack vertically, Desktop: Grid layout */}
           <div className="max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Wheel Image - Moves to top on mobile */}
             <motion.div
               variants={clientReviewsWheelRollingVariants}
               initial="initial"
-              animate={isInView ? "animate" : "initial"}
+              animate={isVisible ? "animate" : "initial"}
               whileHover="hover"
               className="lg:col-span-5 flex justify-center items-center order-first lg:order-last w-full mb-8 lg:mb-0"
             >
@@ -128,7 +130,6 @@ export default function ClientReviews() {
                 whileHover="hover"
                 className="relative w-45 sm:w-55 md:w-72.5 aspect-square rounded-full shadow-2xl overflow-hidden cursor-pointer mx-auto"
               >
-                {/* Trail effect - dust/wind trail behind the rolling image */}
                 <motion.div
                   className="absolute left-full top-1/2 -translate-y-1/2 w-20 h-1 bg-gradient-to-r from-[#8C936E]/0 via-[#8C936E]/30 to-[#8C936E]/0 rounded-full"
                   variants={clientReviewsTrailVariants}
@@ -136,7 +137,6 @@ export default function ClientReviews() {
                   animate="visible"
                 />
                 
-                {/* Rotation rings */}
                 <motion.div
                   className="absolute -inset-4 rounded-full border-2 border-dashed border-[#8C936E]/30 z-0"
                   variants={clientReviewsRingVariants(1)}
@@ -158,7 +158,6 @@ export default function ClientReviews() {
                   className="object-cover relative z-10"
                 />
                 
-                {/* Speed lines effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent z-20"
                   variants={clientReviewsSpeedLinesVariants}
@@ -168,7 +167,6 @@ export default function ClientReviews() {
               </motion.div>
             </motion.div>
 
-            {/* Review Content */}
             <div className={`lg:col-span-7 flex flex-col justify-center w-full ${isRTL ? 'text-right' : 'text-left'}`}>
               <div className="relative min-h-[180px] sm:min-h-[160px] md:min-h-[140px] mb-6 sm:mb-8">
                 <AnimatePresence mode="wait" custom={direction}>
