@@ -45,7 +45,7 @@ export async function getRootLayoutMetadata({ locale }: { locale: string }): Pro
             siteName: 'Beyond Gluten',
             title: t('title.default'),
             description: t('description'),
-            images: [openGraphImage],
+            images: ['/og-image.jpg'],
         },
         twitter: {
             card: 'summary_large_image',
