@@ -1,120 +1,231 @@
 'use client';
 
+import { ABOUT_IMAGES, HOME_IMAGES } from '@/constants/images';
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { containerVariants, itemVariants } from '@/constants/variants';
+import {
+  buttonHoverVariants,
+  containerVariants,
+  itemVariants,
+  phoneVariants,
+  scrollIndicatorVariants,
+  sushiVariants,
+  waffleVariants,
+} from '@/constants/variants';
+import StaticParticlesWrapper from '../home/StaticParticles';
 
 export default function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [showContent, setShowContent] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const locale = useLocale();
   const isRTL = locale === 'ar';
-  const t = useTranslations('about');
-
+  const t = useTranslations('about.hero');
+  
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
+  
   const smoothTextY = useSpring(textY, { stiffness: 120, damping: 35 });
   const smoothOpacity = useSpring(opacity, { stiffness: 120, damping: 35 });
-
+  
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
     checkMobile();
     window.addEventListener('resize', checkMobile);
+    
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  const getBlobPath = () => {
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const x = (clientX / window.innerWidth - 0.5) * 8;
+      const y = (clientY / window.innerHeight - 0.5) * 8;
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
+  
+  const phoneRotateX = useTransform(mouseY, [-5, 5], [4, -4]);
+  const phoneRotateY = useTransform(mouseX, [-5, 5], [isRTL ? 4 : -4, isRTL ? -4 : 4]);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 800);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  const aboutImage = '';
+  
+  const getSvgPath = () => {
     if (isMobile) {
-      return isRTL
-        ? 'M1440,900 L1440,320 L0,900 Z'
-        : 'M0,900 L1440,900 L1440,320 Z';
+      if (isRTL) {
+        return "M1440,900 L1440,220 L0,900 Z";
+      }
+      return "M0,900 L1440,900 L1440,220 Z";
     }
+    
     if (isRTL) {
-      return 'M0,900 L0,780 C100,650 250,860 400,700 C550,540 650,780 800,620 C950,460 1080,700 1200,540 C1320,380 1400,500 1440,280 L1440,900 Z';
+      return "M0,900 L0,840 C100,700 200,920 350,750 C500,580 600,800 750,590 C900,420 1000,680 1150,470 C1300,280 1380,400 1440,220 L1440,900 Z";
     }
-    return 'M1440,900 L1440,780 C1340,650 1190,860 1040,700 C890,540 790,780 640,620 C490,460 360,700 240,540 C120,380 40,500 0,280 L0,900 Z';
+    return "M1440,900 L1440,840 C1340,700 1240,920 1090,750 C940,580 840,800 690,590 C540,420 440,680 290,470 C140,280 60,400 0,220 L0,900 Z";
   };
-
+  
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[70vh] w-full overflow-hidden px-6 py-24 md:px-12 lg:px-24 flex flex-col justify-center font-sans bg-white"
+      className="relative h-screen h-[100dvh] w-full overflow-hidden px-6 py-4 md:px-12 lg:px-24 flex flex-col justify-between font-sans bg-white"
     >
+      <StaticParticlesWrapper 
+        showContent={showContent} 
+        opacity={0.35}
+        showDelay={0}
+      />
+      
       <motion.div
         className="absolute inset-0 z-0 pointer-events-none"
-        style={{ y: backgroundY }}
+        style={{ y: backgroundY, scale: backgroundScale }}
       >
         <motion.svg
-          initial={{ clipPath: isRTL ? 'inset(0 100% 0 0)' : 'inset(0 0 0 100%)' }}
+          initial={{ 
+            clipPath: isRTL ? 'inset(0 100% 0 0)' : 'inset(0 0 0 100%)' 
+          }}
           animate={{ clipPath: 'inset(0 0 0 0%)' }}
-          transition={{ duration: isMobile ? 0.8 : 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
+          transition={{ 
+            duration: isMobile ? 0.8 : 1.2,
+            ease: [0.19, 1, 0.22, 1],
+            delay: 0.1
+          }}
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 1440 900"
           preserveAspectRatio="none"
           fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <path d={getBlobPath()} className="fill-theme-blob-3" />
+          <path
+            d={getSvgPath()}
+            className="fill-theme-blob-3"
+          />
         </motion.svg>
       </motion.div>
-
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto w-full"
-        style={{ y: smoothTextY, opacity: smoothOpacity }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
-        <motion.div
-          className={`flex flex-col ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div className="flex items-center gap-3 mb-3" variants={itemVariants}>
+      
+      <AnimatePresence>
+        {showContent && (
+          <motion.div
+            className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center my-auto w-full max-w-7xl mx-auto h-full max-h-[calc(100vh-100px)]"
+            style={{ y: smoothTextY, opacity: smoothOpacity }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+          >
             <motion.div
-              className="w-10 h-[1px] bg-theme-brand/40"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              style={{ transformOrigin: isRTL ? 'right' : 'left' }}
-            />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-theme-brand">
-              {t('title')}
-            </span>
-            <motion.div
-              className="w-10 h-[1px] bg-theme-brand/40"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              style={{ transformOrigin: isRTL ? 'left' : 'right' }}
-            />
+              className={`col-span-1 lg:col-span-7 flex flex-col justify-center ${isRTL ? 'lg:mr-12 items-end text-right' : 'items-start text-left'}`}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.span
+                variants={itemVariants}
+                className="text-xs uppercase rtl:ml-auto tracking-wider mb-2 block font-semibold text-theme-muted-2"
+              >
+                {t('tag')}
+              </motion.span>
+              
+              <motion.h1
+                variants={itemVariants}
+                className="text-3xl font-semibold md:text-5xl lg:text-[56px] xl:text-[64px] leading-[1.1] mb-4 tracking-tight text-theme-strong"
+              >
+                {t.rich('title', {
+                  green: (chunks) => (
+                    <span className="text-theme-brand">{chunks}</span>
+                  )
+                })}
+              </motion.h1>
+              
+              <motion.p
+                variants={itemVariants}
+                className="text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-6 font-medium text-theme-muted"
+              >
+                {t('subtitle')}
+              </motion.p>
+              
+              <motion.div
+                className={`flex flex-row gap-3 items-center w-full ${isRTL ? 'justify-start' : 'justify-start'}`}
+                variants={itemVariants}
+              >
+                <motion.button
+                  className="px-4 py-2.5 md:px-8 md:py-3.5 text-white font-semibold rounded-full shadow-sm text-xs md:text-sm relative overflow-hidden group cursor-pointer whitespace-nowrap bg-theme-brand"
+                  variants={buttonHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <motion.span
+                    className="absolute inset-0 bg-theme-brand-dark"
+                    initial={{ x: isRTL ? "100%" : "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ type: "tween", duration: 0.3 }}
+                  />
+                  <span className="relative z-10">{t('cta_primary')}</span>
+                </motion.button>
+                
+                <motion.button
+                  className="px-4 py-2.5 md:px-8 md:py-3.5 bg-transparent font-semibold rounded-full text-xs md:text-sm relative overflow-hidden group cursor-pointer whitespace-nowrap text-theme-muted border border-theme-brand"
+                  variants={buttonHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <motion.span
+                    className="absolute inset-0 rounded-full bg-theme-brand-08"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1, opacity: 1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  />
+                  <span className="relative z-10">{t('cta_secondary')}</span>
+                </motion.button>
+              </motion.div>
+            </motion.div>
+            
+            <div className={`hidden lg:col-span-5 relative lg:flex justify-center items-center h-full ${isRTL ? 'order-first' : 'order-none'}`}>
+              <motion.div
+                className="relative w-[520px] max-h-[75vh] drop-shadow-[0_35px_60px_rgba(0,0,0,0.18)] z-20"
+                variants={phoneVariants}
+                initial="hidden"
+                animate="visible"
+                style={{ rotateX: phoneRotateX, rotateY: phoneRotateY, transformStyle: "preserve-3d" }}
+              >
+                <Image
+                  src={isRTL ? ABOUT_IMAGES.hero_arabic : ABOUT_IMAGES.hero_english}
+                  alt="Beyond Gluten About Us"
+                  width={420}
+                  height={800}
+                  className="w-full h-full object-contain max-h-[85vh]"
+                  priority
+                />
+              </motion.div>
+              
+            </div>
           </motion.div>
-
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4 text-theme-strong"
-          >
-            {t.rich('title', {
-              green: (chunks) => <span className="text-theme-brand">{chunks}</span>
-            })}
-          </motion.h1>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl font-medium text-theme-muted"
-          >
-            {t('subtitle')}
-          </motion.p>
-        </motion.div>
-      </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

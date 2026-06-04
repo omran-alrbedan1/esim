@@ -8,8 +8,11 @@
             "description": "We are here to help - contact us via phone, email, or WhatsApp"
         }
     },
-    "title": "Contact Us",
-    "subtitle": "Have a question or want to work with us? Drop us a line!",
+    "tag": "Contact Us",
+    "title": "Let's <green>Connect</green>",
+    "subtitle": "Have questions about Beyond Gluten? We'd love to hear from you. Reach out to our team and we'll get back to you within 24 hours.",
+    "cta_primary": "Send Message",
+    "cta_secondary": "Schedule a Call",
     "form": {
         "name": "Name",
         "email": "Email",
@@ -20,8 +23,8 @@
     },
     "info": {
         "title": "Our Information",
-        "email": "For inquiries, email us at info@beyondgluten.com",
-        "phone": "Call us at +962 7 8018 5759",
+        "email": "info@beyondgluten.com",
+        "phone": "+962 7 8018 5759",
         "address": "Amman, Jordan"
     },
     "social": {

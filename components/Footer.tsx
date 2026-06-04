@@ -53,13 +53,6 @@ export default function Footer() {
     }
   ];
 
-  const footerLinks = [
-    { label: t('links.about'), href: '#about' },
-    { label: t('links.terms'), href: '#' },
-    { label: t('links.privacy'), href: '#' },
-    { label: t('links.contact'), href: '#contact' },
-  ];
-
   return (
     <footer
       ref={sectionRef}
@@ -87,24 +80,6 @@ export default function Footer() {
             </Link>
           </motion.div>
 
-          {/* Navigation Links - Stack on mobile, row on medium+ */}
-          <nav className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6">
-            {footerLinks.map((link, idx) => (
-              <motion.a
-                key={link.label}
-                custom={idx}
-                variants={footerLinkVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
-                href={link.href}
-                className="text-sm text-gray-500 hover:text-[#8C936E] transition-colors font-medium"
-              >
-                {link.label}
-              </motion.a>
-            ))}
-          </nav>
-
           {/* Social Links - 3D Spheres */}
           <div className="flex items-center justify-center gap-4">
             {socialLinks.map((social, idx) => (
@@ -120,7 +95,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar - Stack on mobile, row on larger screens */}
         <motion.div
           variants={footerItemVariants}
           className="mt-8 pt-6 border-t border-gray-200"

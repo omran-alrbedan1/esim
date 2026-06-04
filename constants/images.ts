@@ -26,3 +26,19 @@ export const HOME_IMAGES = {
   },
   contactUs: '/images/home/ContactUs.png',
 } as const;
+
+export const ABOUT_IMAGES = {
+  hero_english: '/images/about/about_english.png',
+  hero_arabic: '/images/about/about_arabic.png',
+  mission: '/images/about/our_mission.png',
+  vision: '/images/about/our_vission.png',
+  story: '/images/about/story.png',
+  stats: '/images/about/stats.png',
+} as const; 
+
+export const CONTACT_IMAGES = {
+  hero_english: '/images/contact/hero_english.png',
+  hero_arabic: '/images/contact/hero_arabic.png',
+
+  
+}

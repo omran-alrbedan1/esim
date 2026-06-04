@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { whyChooseUsContainerVariants, whyChooseUsHeaderVariants, aboutVisionCardVariants } from '@/constants/variants';
 
@@ -27,25 +26,30 @@ const VALUE_ICONS = [
 export default function AboutVision() {
   const locale = useLocale();
   const isRTL = locale === 'ar';
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const t = useTranslations('about');
   const values = t.raw('values.items') as Array<{ title: string; description: string }>;
 
   return (
-    <section ref={sectionRef} className="w-full py-20 md:py-28 overflow-hidden bg-theme-blob-3">
+    <motion.section
+      className="w-full py-20 md:py-28 overflow-hidden bg-theme-blob-3"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+    >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           className="flex flex-col items-center text-center mb-16"
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
           variants={whyChooseUsHeaderVariants}
         >
           <motion.div className="flex items-center gap-3 mb-2">
             <motion.div
               className="w-8 h-[1px] bg-theme-brand/30"
               initial={{ scaleX: 0 }}
-              animate={isInView ? { scaleX: 1 } : {}}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               style={{ transformOrigin: isRTL ? 'left' : 'right' }}
             />
@@ -55,7 +59,8 @@ export default function AboutVision() {
             <motion.div
               className="w-8 h-[1px] bg-theme-brand/40"
               initial={{ scaleX: 0 }}
-              animate={isInView ? { scaleX: 1 } : {}}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               style={{ transformOrigin: isRTL ? 'right' : 'left' }}
             />
@@ -66,40 +71,53 @@ export default function AboutVision() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
           variants={whyChooseUsContainerVariants}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
         >
           {values.map((value, index) => (
             <motion.div
               key={index}
-              className="group relative bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-500"
+              className="group relative bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center gap-4"
               variants={aboutVisionCardVariants(index)}
-              whileHover={{ y: -8, transition: { type: 'spring' as const, stiffness: 300 } }}
+              whileHover={{ y: -4, transition: { type: 'spring' as const, stiffness: 300 } }}
             >
+              {/* Icon - Top Center */}
               <motion.div
-                className={`w-16 h-16 rounded-full ${VALUE_ICONS[index].bg} flex items-center justify-center mx-auto mb-6 group-hover:bg-theme-brand group-hover:text-white transition-all duration-500`}
+                className={`flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full ${VALUE_ICONS[index].bg} flex items-center justify-center group-hover:bg-theme-brand group-hover:text-white transition-all duration-500`}
                 initial={{ scale: 0, rotate: -180 }}
-                animate={isInView ? { scale: 1, rotate: 0 } : {}}
+                whileInView={{ scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
                 transition={{ type: 'spring' as const, stiffness: 260, damping: 20, delay: 0.3 + 0.2 * index }}
+                whileHover={{ scale: 1.1 }}
               >
-                <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d={VALUE_ICONS[index].path} />
                 </svg>
               </motion.div>
 
-              <h3 className="text-lg font-bold mb-3 text-theme-strong">
-                {value.title}
-              </h3>
+              {/* Content - Below Icon */}
+              <motion.div
+                className="flex-1"
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 + 0.1 * index }}
+              >
+                <h3 className="text-base font-bold mb-1 text-theme-strong group-hover:text-theme-brand transition-colors duration-300">
+                  {value.title}
+                </h3>
 
-              <p className="text-sm leading-relaxed text-theme-muted">
-                {value.description}
-              </p>
+                <p className="text-xs md:text-sm leading-relaxed text-theme-muted">
+                  {value.description}
+                </p>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

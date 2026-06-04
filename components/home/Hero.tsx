@@ -15,7 +15,7 @@ import {
   sushiVariants,
   waffleVariants,
 } from '@/constants/variants';
-
+  
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [showContent, setShowContent] = useState<boolean>(false);
@@ -145,7 +145,7 @@ export default function Hero() {
             >
               <motion.span
                 variants={itemVariants}
-                className="text-xs uppercase text-end  rtl:ml-auto tracking-wider mb-2 block font-semibold text-theme-muted-2"
+                className="text-xs uppercase text-end    rtl:ml-auto tracking-wider mb-2 block font-semibold text-theme-muted-2"
               >
                 {t('hero.tag')}
               </motion.span>

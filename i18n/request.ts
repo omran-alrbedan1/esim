@@ -14,7 +14,6 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
     home,
     about,
     contact,
-    policies,
     footer,
     layout,
   ] = await Promise.all([
@@ -23,7 +22,6 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
     import(`../messages/${locale}/home.json`),
     import(`../messages/${locale}/about.json`),
     import(`../messages/${locale}/contact.json`),
-    import(`../messages/${locale}/policies.json`),
     import(`../messages/${locale}/footer.json`),
     import(`../messages/${locale}/layout.json`),
   ]);
@@ -36,7 +34,6 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
       home: home.default,
       about: about.default,
       contact: contact.default,
-      policies: policies.default,
       footer: footer.default,
       layout:layout.default
     },

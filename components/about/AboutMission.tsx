@@ -1,91 +1,149 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { sectionVariants, aboutMissionCardVariants, aboutMissionIconVariants, aboutMissionBarVariants } from '@/constants/variants';
+import { motion } from 'framer-motion';
+import { ABOUT_IMAGES } from '@/constants/images';
 
 export default function AboutMission() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const t = useTranslations('about');
 
-  const items = [
-    {
-      key: 'mission',
-      icon: (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z" />
-          <path d="M2 17l10 5 10-5" />
-          <path d="M2 12l10 5 10-5" />
-        </svg>
-      ),
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.1,
+      },
     },
-    {
-      key: 'vision',
-      icon: (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-          <circle cx="12" cy="12" r="3" />
-        </svg>
-      ),
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] },
     },
-    {
-      key: 'story',
-      icon: (
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 20h9" />
-          <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-        </svg>
-      ),
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.2 },
     },
-  ];
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, delay: 0.3 },
+    },
+  };
+
+  const textRightVariants = {
+    hidden: { opacity: 0, x: 30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, delay: 0.3 },
+    },
+  };
+
+  const lineVariants = {
+    hidden: { width: 0 },
+    visible: {
+      width: 64,
+      transition: { duration: 0.6, delay: 0.4 },
+    },
+  };
 
   return (
-    <section ref={sectionRef} className="w-full py-20 md:py-28 overflow-hidden bg-[#F9F9F9]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <motion.section
+      className="py-20 px-4 "
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+    >
+      <div className="max-w-6xl mx-auto space-y-20 md:space-y-28">
+        {/* Mission Section - Image Left, Text Right */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
-          variants={sectionVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
+          variants={itemVariants}
         >
-          {items.map((item, index) => (
+          {/* Image - Left Side */}
+          <motion.div
+            className="relative h-[420px] "
+            variants={imageVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Image
+              src={ABOUT_IMAGES.mission}
+              alt={t('mission.title')}
+              fill
+              className="object-contain"
+              priority
+            />
+          </motion.div>
+
+          {/* Text - Right Side */}
+          <motion.div variants={textVariants}>
+            <h3 className="mb-4 text-3xl md:text-4xl font-bold text-theme-strong">
+              {t('mission.title')}
+            </h3>
             <motion.div
-              key={item.key}
-              className="group relative bg-white rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-xl transition-all duration-500"
-              variants={aboutMissionCardVariants(index)}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              whileHover="hover"
-            >
-              <motion.div
-                className="w-14 h-14 rounded-xl bg-theme-blob-3 flex items-center justify-center text-theme-brand mb-6 group-hover:bg-theme-brand group-hover:text-white transition-colors duration-500"
-                variants={aboutMissionIconVariants(index)}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-              >
-                {item.icon}
-              </motion.div>
+              className="h-px bg-theme-brand mb-6 rounded-full"
+              variants={lineVariants}
+            />
+            <p className="text-base md:text-lg leading-relaxed text-theme-muted">
+              {t('mission.body')}
+            </p>
+          </motion.div>
+        </motion.div>
 
-              <h3 className="text-xl font-bold mb-3 text-theme-strong">
-                {t(`${item.key}.title`)}
-              </h3>
+        {/* Vision Section - Text Left, Image Right */}
+        <motion.div
+          className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
+          variants={itemVariants}
+        >
+          {/* Text - Left Side */}
+          <motion.div variants={textRightVariants}>
+            <h3 className="mb-4 text-3xl md:text-4xl font-bold text-theme-strong">
+              {t('vision.title')}
+            </h3>
+            <motion.div
+              className="h-px bg-theme-brand mb-6 rounded-full"
+              variants={lineVariants}
+            />
+            <p className="text-base md:text-lg leading-relaxed text-theme-muted">
+              {t('vision.body')}
+            </p>
+          </motion.div>
 
-              <p className="text-sm leading-relaxed text-theme-muted">
-                {t(`${item.key}.body`)}
-              </p>
-
-              <motion.div
-                className="absolute bottom-0 left-0 h-1 bg-theme-brand rounded-b-2xl"
-                variants={aboutMissionBarVariants(index)}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-              />
-            </motion.div>
-          ))}
+          {/* Image - Right Side */}
+          <motion.div
+            className="relative h-[380px]"
+            variants={imageVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Image
+              src={ABOUT_IMAGES.vision}
+              alt={t('vision.title')}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain"
+            />
+          </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

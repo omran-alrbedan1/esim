@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getAboutPageMetadata } from '@/lib/metadata';
-import { AboutHero, AboutMission, AboutVision } from '@/components/about';
+import { AboutHero, AboutMission, AboutVision, AboutVideo } from '@/components/about';
 
 export async function generateMetadata({
   params
@@ -13,8 +13,9 @@ export async function generateMetadata({
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F9F9F9]">
+    <main className="min-h-screen ">
       <AboutHero />
+      <AboutVideo />
       <AboutMission />
       <AboutVision />
     </main>

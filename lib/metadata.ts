@@ -112,15 +112,4 @@ export async function getContactPageMetadata({ locale }: { locale:string }): Pro
     };
 }
 
-export async function getPoliciesPageMetadata({ locale }: { locale:string }): Promise<Metadata> {
-    const t = await getTranslations({ locale, namespace: 'policies.metadata' });
-    const canonicalUrl = `${BASE_URL}/${locale}/policies`;
 
-    return {
-        title: t('title'),
-        description: t('description'),
-        keywords: t('keywords'),
-        robots: { index: false, follow: true },
-        alternates: { canonical: canonicalUrl },
-    };
-}

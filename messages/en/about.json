@@ -14,9 +14,26 @@
     "title": "Our Mission",
     "body": "At Beyond Gluten, we believe that going gluten-free shouldn't mean compromising on taste. Our mission is to create delicious, high-quality gluten-free products that everyone can enjoy — whether you have celiac disease, gluten sensitivity, or simply choose a gluten-free lifestyle."
   },
+  "hero": {
+    "tag": "Integrated Platform",
+    "title": "One Platform For Everything <green>Gluten-Free</green>",
+    "subtitle": "Beyond Gluten combines marketplace, community, and health awareness in one unified platform. Shop certified products, connect with others, and access expert-approved content - all in one place.",
+    "cta_primary": "Explore Platform",
+    "cta_secondary": "Our Story",
+    "scroll_indicator": "Learn More"
+  },
   "story": {
     "title": "Our Story",
+    "heading": "How It Started",
     "body": "Founded with a passion for baking and a commitment to inclusivity, Beyond Gluten started in a small kitchen with a simple goal: make gluten-free food that tastes as good as the real thing. Today, we continue to innovate and expand our product line, bringing smiles to tables everywhere."
+  },
+  "video": {
+    "title": "Watch Our Story",
+    "heading": "Meet Beyond Gluten",
+    "body": "Watch a short introduction to our mission, vision, and the people behind Beyond Gluten. See how we're transforming the gluten-free experience for thousands of users worldwide.",
+    "additionalBody": "Since our founding, we've grown from a small kitchen operation to a trusted name in gluten-free living. Our dedicated team of nutritionists, chefs, and technologists work around the clock to ensure every product and piece of content meets the highest standards of safety and quality.",
+    "didYouKnow": "Did You Know?",
+    "fact": "Over 10,000+ gluten-free products have been certified through our platform, helping thousands of families enjoy safe, delicious meals every day."
   },
   "vision": {
     "title": "Our Vision",
@@ -42,5 +59,11 @@
         "description": "Transparency and integrity guide everything we do, from sourcing ingredients to packaging and delivery."
       }
     ]
+  },
+  "stats": {
+    "years": "Years of expertise",
+    "stores": "Partner stores",
+    "products": "Products available",
+    "customers": "Happy customers"
   }
 }
