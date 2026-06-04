@@ -40,6 +40,7 @@ export default function AboutMission() {
     >
       <div 
         className="max-w-6xl mx-auto space-y-20 md:space-y-28"
+        //@ts-ignore
         style={{ y: smoothExitY, opacity: smoothExitOpacity }}
       >
         {/* Mission Section - Image Left, Text Right */}

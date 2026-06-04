@@ -77,15 +77,10 @@ export default function AboutVideo() {
             viewport={{ once: true, margin: "-50px" }}
             className="w-full lg:w-1/2"
           >
-            <Image
-              src={'/og-image.jpg'}
-              fill
-              alt={'logo'}
-            />
             <div className="relative overflow-hidden rounded-2xl shadow-lg" style={{ paddingTop: '56.25%' }}>
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                // src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 title={t('video.title') || "About video"}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
