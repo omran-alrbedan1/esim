@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { AppDownload, AppScreenshots, AwesomeFeatures, ClientReviews, ContactUs, WhyChooseUs, InnovativeShop, Hero } from "@/components/home";
+import AppScreenshotsClient from "@/components/home/AppScreenshotsClient";
+import ClientReviewsClient from "@/components/home/ClientReviewsClient";
+import ContactUsClient from "@/components/home/ContactUsClient";
+import { AppDownload, AwesomeFeatures, WhyChooseUs, InnovativeShop, Hero } from "@/components/home";
 import { getHomePageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({
@@ -33,15 +36,15 @@ export default function Home() {
       </section>
 
       <section id="screenshots">
-        <AppScreenshots />
+        <AppScreenshotsClient />
       </section>
 
       <section id="testimonials">
-        <ClientReviews />
+        <ClientReviewsClient />
       </section>
 
       <section id="contact">
-        <ContactUs />
+        <ContactUsClient />
       </section>
     </main>
   );

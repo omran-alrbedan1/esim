@@ -15,8 +15,11 @@
     "cta_secondary": "Schedule a Call",
     "form": {
         "name": "Name",
+        "namePlaceholder": "Your Name",
         "email": "Email",
+        "emailPlaceholder": "Your Email",
         "message": "Message",
+        "messagePlaceholder": "Your Message",
         "submit": "Send Message",
         "success": "Thank you! Your message has been sent.",
         "error": "Sorry, something went wrong. Please try again."

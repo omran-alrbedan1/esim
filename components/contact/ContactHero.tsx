@@ -71,6 +71,13 @@ export default function ContactHero() {
     return () => clearTimeout(timer);
   }, []);
   
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const getSvgPath = () => {
     if (isMobile) {
       if (isRTL) {
@@ -172,6 +179,7 @@ export default function ContactHero() {
                   variants={buttonHoverVariants}
                   whileHover="hover"
                   whileTap="tap"
+                  onClick={() => scrollToSection('contact-form')}
                 >
                   <motion.span
                     className="absolute inset-0 bg-theme-brand-dark"

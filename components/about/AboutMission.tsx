@@ -31,6 +31,7 @@ export default function AboutMission() {
 
   return (
     <motion.section
+      id="about-mission"
       ref={sectionRef}
       className="py-20 px-4 overflow-hidden relative"
       variants={aboutMissionContainerVariants}

@@ -1,7 +1,7 @@
 //@ts-nocheck
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -9,7 +9,6 @@ export default function ContactFormSection() {
   const locale = useLocale();
   const isRTL = locale === 'ar';
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const t = useTranslations('contact');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -85,17 +84,20 @@ export default function ContactFormSection() {
   });
 
   return (
-    <section ref={sectionRef} className="w-full py-20 md:py-28 overflow-hidden ">
+    <section id="contact-form" ref={sectionRef} className="w-full py-20 md:py-28 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${isRTL ? 'lg:direction-rtl' : ''}`}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+          }}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
         >
-
           {/* ── Form column ── */}
           <motion.div variants={fieldVariants(0)}>
-
             <h2 className="font-serif text-3xl font-normal text-theme-strong mb-1">
               {t('info.title')}
             </h2>
@@ -106,7 +108,6 @@ export default function ContactFormSection() {
             <hr className="border-t border-[#EDECE6] mb-8" />
 
             <form onSubmit={handleSubmit} className="space-y-6">
-
               {/* Name */}
               <motion.div variants={fieldVariants(0.1)}>
                 <label htmlFor="name" className="block text-[10px] font-medium uppercase tracking-[0.09em] text-theme-muted-2 mb-1.5">
@@ -114,7 +115,7 @@ export default function ContactFormSection() {
                 </label>
                 <input
                   id="name" name="name" required
-                  placeholder={t('form.name')}
+                  placeholder={t('form.namePlaceholder')}
                   className="w-full border-0 border-b border-[#E0DFD8] bg-transparent py-2.5 text-sm text-theme-strong placeholder:text-[#C5C3BB] focus:border-theme-brand focus:outline-none focus:ring-0 transition-colors duration-200"
                 />
               </motion.div>
@@ -126,7 +127,7 @@ export default function ContactFormSection() {
                 </label>
                 <input
                   id="email" name="email" type="email" required
-                  placeholder={t('form.email')}
+                  placeholder={t('form.emailPlaceholder')}
                   className="w-full border-0 border-b border-[#E0DFD8] bg-transparent py-2.5 text-sm text-theme-strong placeholder:text-[#C5C3BB] focus:border-theme-brand focus:outline-none focus:ring-0 transition-colors duration-200"
                 />
               </motion.div>
@@ -138,7 +139,7 @@ export default function ContactFormSection() {
                 </label>
                 <textarea
                   id="message" name="message" rows={4} required
-                  placeholder={t('form.message')}
+                  placeholder={t('form.messagePlaceholder')}
                   className="w-full border-0 border-b border-[#E0DFD8] bg-transparent py-2.5 text-sm text-theme-strong placeholder:text-[#C5C3BB] focus:border-theme-brand focus:outline-none focus:ring-0 transition-colors duration-200 resize-none"
                 />
               </motion.div>
@@ -223,7 +224,6 @@ export default function ContactFormSection() {
               </div>
             </div>
           </motion.div>
-
         </motion.div>
       </div>
     </section>

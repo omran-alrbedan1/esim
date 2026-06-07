@@ -75,6 +75,13 @@ export default function AboutHero() {
   }, []);
   
   const aboutImage = '';
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   
   const getSvgPath = () => {
     if (isMobile) {
@@ -177,6 +184,7 @@ export default function AboutHero() {
                   variants={buttonHoverVariants}
                   whileHover="hover"
                   whileTap="tap"
+                  onClick={() => scrollToSection('about-video')}
                 >
                   <motion.span
                     className="absolute inset-0 bg-theme-brand-dark"
@@ -192,6 +200,7 @@ export default function AboutHero() {
                   variants={buttonHoverVariants}
                   whileHover="hover"
                   whileTap="tap"
+                  onClick={() => scrollToSection('about-mission')}
                 >
                   <motion.span
                     className="absolute inset-0 rounded-full bg-theme-brand-08"

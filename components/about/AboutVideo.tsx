@@ -19,6 +19,7 @@ export default function AboutVideo() {
 
   return (
     <motion.section
+      id="about-video"
       className="w-full pt-20 md:py-28  overflow-hidden"
       variants={aboutContainerVariants}
       initial="hidden"
