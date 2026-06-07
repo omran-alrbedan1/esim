@@ -20,7 +20,7 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [showContent, setShowContent] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const locale = useLocale();
+  const locale = useLocale() ?? 'en';
   const isRTL = locale === 'ar';
   const t = useTranslations('home');
   
@@ -75,6 +75,13 @@ export default function Hero() {
   }, []);
   
   const hero3Image = locale === 'ar' ? HOME_IMAGES.hero.hero3_arabic : HOME_IMAGES.hero.hero3_english;
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   
   const getSvgPath = () => {
     if (isMobile) {
@@ -128,166 +135,162 @@ export default function Hero() {
         </motion.svg>
       </motion.div>
       
-      <AnimatePresence>
-        {showContent && (
+      {/* المحتوى الرئيسي - إزالة AnimatePresence لتجنب مشاكل الأزرار */}
+      <div className="relative z-10 flex flex-col justify-between h-full">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center my-auto w-full max-w-7xl mx-auto"
+          style={{ y: smoothTextY, opacity: smoothOpacity }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showContent ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+        >
           <motion.div
-            className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center my-auto w-full max-w-7xl mx-auto h-full max-h-[calc(100vh-100px)]"
-            style={{ y: smoothTextY, opacity: smoothOpacity }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
+            className={`col-span-1 lg:col-span-7 flex flex-col justify-center ${isRTL ? 'lg:mr-12 items-end text-right' : 'items-start text-left'}`}
+            variants={containerVariants}
+            initial="hidden"
+            animate={showContent ? "visible" : "hidden"}
           >
-            <motion.div
-              className={`col-span-1 lg:col-span-7 flex flex-col justify-center ${isRTL ? 'lg:mr-12 items-end text-right' : 'items-start text-left'}`}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
+            <motion.span
+              variants={itemVariants}
+              className="text-xs uppercase tracking-wider mb-2 block font-semibold text-theme-muted-2"
             >
-              <motion.span
-                variants={itemVariants}
-                className="text-xs uppercase text-end    rtl:ml-auto tracking-wider mb-2 block font-semibold text-theme-muted-2"
+              {t('hero.tag')}
+            </motion.span>
+            
+            <motion.h1
+              variants={itemVariants}
+              className="text-3xl font-semibold md:text-5xl lg:text-[56px] xl:text-[64px] leading-[1.1] mb-4 tracking-tight text-theme-strong"
+            >
+              {t.rich('hero.title', {
+                green: (chunks) => (
+                  <span className="text-theme-brand">{chunks}</span>
+                )
+              })}
+            </motion.h1>
+            
+            <motion.p
+              variants={itemVariants}
+              className="text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-6 font-medium text-theme-muted"
+            >
+              {t('hero.subtitle')}
+            </motion.p>
+            
+            <motion.div
+              className={`flex flex-row gap-3 items-center w-full ${isRTL ? 'justify-start' : 'justify-start'}`}
+              variants={itemVariants}
+            >
+              <motion.a
+                className="px-4 py-2.5 md:px-8 md:py-3.5 text-white font-semibold rounded-full shadow-sm text-xs md:text-sm relative overflow-hidden group cursor-pointer whitespace-nowrap bg-theme-brand z-20 inline-flex items-center justify-center"
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
+            onClick={() => scrollToSection('innovative')}
               >
-                {t('hero.tag')}
-              </motion.span>
+                <motion.span
+                  className="absolute inset-0 bg-theme-brand-dark pointer-events-none"
+                  initial={{ x: isRTL ? "100%" : "-100%" }}
+                  whileHover={{ x: 0 }}
+                  transition={{ type: "tween", duration: 0.3 }}
+                />
+                <span className="relative z-10">{t('hero.cta_primary')}</span>
+              </motion.a>
               
-              <motion.h1
-                variants={itemVariants}
-                className="text-3xl font-semibold md:text-5xl lg:text-[56px] xl:text-[64px] leading-[1.1] mb-4 tracking-tight text-theme-strong"
+              <motion.a
+                href={`/${locale}/about`}
+                className="px-4 py-2.5 md:px-8 md:py-3.5 bg-transparent font-semibold rounded-full text-xs md:text-sm relative overflow-hidden group cursor-pointer whitespace-nowrap text-theme-muted border border-theme-brand z-20 inline-flex items-center justify-center"
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
               >
-                {t.rich('hero.title', {
-                  green: (chunks) => (
-                    <span className="text-theme-brand">{chunks}</span>
-                  )
-                })}
-              </motion.h1>
-              
-              <motion.p
-                variants={itemVariants}
-                className="text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-6 font-medium text-theme-muted"
-              >
-                {t('hero.subtitle')}
-              </motion.p>
-              
-              <motion.div
-                className={`flex flex-row gap-3 items-center w-full ${isRTL ? 'justify-start' : 'justify-start'}`}
-                variants={itemVariants}
-              >
-                <motion.button
-                  className="px-4 py-2.5 md:px-8 md:py-3.5 text-white font-semibold rounded-full shadow-sm text-xs md:text-sm relative overflow-hidden group cursor-pointer whitespace-nowrap bg-theme-brand"
-                  variants={buttonHoverVariants}
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  <motion.span
-                    className="absolute inset-0 bg-theme-brand-dark"
-                    initial={{ x: isRTL ? "100%" : "-100%" }}
-                    whileHover={{ x: 0 }}
-                    transition={{ type: "tween", duration: 0.3 }}
-                  />
-                  <span className="relative z-10">{t('hero.cta_primary')}</span>
-                </motion.button>
-                
-                <motion.button
-                  className="px-4 py-2.5 md:px-8 md:py-3.5 bg-transparent font-semibold rounded-full text-xs md:text-sm relative overflow-hidden group cursor-pointer whitespace-nowrap text-theme-muted border border-theme-brand"
-                  variants={buttonHoverVariants}
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  <motion.span
-                    className="absolute inset-0 rounded-full bg-theme-brand-08"
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  />
-                  <span className="relative z-10">{t('hero.cta_secondary')}</span>
-                </motion.button>
-              </motion.div>
+                <motion.span
+                  className="absolute inset-0 rounded-full bg-theme-brand-08 pointer-events-none"
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileHover={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                />
+                <span className="relative z-10">{t('hero.cta_secondary')}</span>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+          
+          <div className={`hidden lg:col-span-5 relative lg:flex justify-center items-center h-full ${isRTL ? 'order-first' : 'order-none'}`}>
+            <motion.div
+              className="relative w-[320px] max-h-[65vh] drop-shadow-[0_35px_60px_rgba(0,0,0,0.18)] z-20"
+              variants={phoneVariants}
+              initial="hidden"
+              animate={showContent ? "visible" : "hidden"}
+              style={{ rotateX: phoneRotateX, rotateY: phoneRotateY, transformStyle: "preserve-3d" }}
+            >
+              <Image
+                src={hero3Image}
+                alt="Beyond Gluten Mobile App"
+                width={320}
+                height={600}
+                className="w-full h-full object-contain max-h-[65vh]"
+                priority
+              />
             </motion.div>
             
-            <div className={`hidden lg:col-span-5 relative lg:flex justify-center items-center h-full ${isRTL ? 'order-first' : 'order-none'}`}>
-              <motion.div
-                className="relative w-[320px] max-h-[65vh] drop-shadow-[0_35px_60px_rgba(0,0,0,0.18)] z-20"
-                variants={phoneVariants}
-                initial="hidden"
-                animate="visible"
-                style={{ rotateX: phoneRotateX, rotateY: phoneRotateY, transformStyle: "preserve-3d" }}
-              >
-                <Image
-                  src={hero3Image}
-                  alt="Beyond Gluten Mobile App"
-                  width={320}
-                  height={600}
-                  className="w-full h-full object-contain max-h-[65vh]"
-                  priority
-                />
-              </motion.div>
-              
-              <motion.div
-                className={`absolute top-[25%] w-36 h-36 hidden xl:block z-10 ${isRTL ? '-left-12' : '-right-12'}`}
-                variants={waffleVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <Image
-                  src={HOME_IMAGES.hero.hero1}
-                  alt="Waffle"
-                  width={144}
-                  height={144}
-                  className="w-full h-full object-contain scale-110"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      
-      <AnimatePresence>
-        {showContent && (
-          <motion.div
-            className="relative z-10 flex flex-col items-center justify-center pt-2 mt-auto w-full"
-            variants={scrollIndicatorVariants}
-            initial="hidden"
-            animate="visible"
-          >
             <motion.div
-              className="flex items-center gap-2 text-[11px] font-medium tracking-wide mb-2 cursor-pointer text-theme-muted-2"
-              whileHover={{ scale: 1.1 }}
+              className={`absolute top-[25%] w-36 h-36 hidden xl:block z-10 ${isRTL ? '-left-12' : '-right-12'}`}
+              variants={waffleVariants}
+              initial="hidden"
+              animate={showContent ? "visible" : "hidden"}
             >
-              <svg
-                width="12"
-                height="18"
-                viewBox="0 0 14 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current"
-              >
-                <rect x="1" y="1" width="12" height="18" rx="6" strokeWidth="1.5" />
-                <circle cx="7" cy="6" r="1" fill="currentColor" />
-              </svg>
-              <span>{t('hero.scroll_indicator')}</span>
+              <Image
+                src={HOME_IMAGES.hero.hero1}
+                alt="Waffle"
+                width={144}
+                height={144}
+                className="w-full h-full object-contain scale-110"
+              />
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      
-      <AnimatePresence>
-        {showContent && (
+          </div>
+        </motion.div>
+        
+        {/* Scroll Indicator */}
+        <motion.div
+          className="flex flex-col items-center justify-center pt-2 w-full"
+          variants={scrollIndicatorVariants}
+          initial="hidden"
+          animate={showContent ? "visible" : "hidden"}
+        >
           <motion.div
-            className={`absolute bottom-[-30px] w-64 z-30 pointer-events-none hidden md:block ${isRTL ? 'right-[-30px]' : 'left-[-30px]'}`}
-            variants={sushiVariants}
-            initial="hidden"
-            animate="visible"
+            className="flex items-center gap-2 text-[11px] font-medium tracking-wide mb-2 cursor-pointer text-theme-muted-2 z-20"
+            whileHover={{ scale: 1.1 }}
+            onClick={() => scrollToSection('about')}
           >
-            <Image
-              src={HOME_IMAGES.hero.hero2}
-              alt="Healthy Gluten-Free Food"
-              width={256}
-              height={256}
-              className="w-full h-full object-contain drop-shadow-xl"
-            />
+            <svg
+              width="12"
+              height="18"
+              viewBox="0 0 14 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current"
+            >
+              <rect x="1" y="1" width="12" height="18" rx="6" strokeWidth="1.5" />
+              <circle cx="7" cy="6" r="1" fill="currentColor" />
+            </svg>
+            <span>{t('hero.scroll_indicator')}</span>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </motion.div>
+      </div>
+      
+      {/* العناصر العائمة */}
+      <motion.div
+        className={`absolute bottom-[-30px] w-64 z-30 pointer-events-none hidden md:block ${isRTL ? 'right-[-30px]' : 'left-[-30px]'}`}
+        variants={sushiVariants}
+        initial="hidden"
+        animate={showContent ? "visible" : "hidden"}
+      >
+        <Image
+          src={HOME_IMAGES.hero.hero2}
+          alt="Healthy Gluten-Free Food"
+          width={256}
+          height={256}
+          className="w-full h-full object-contain drop-shadow-xl"
+        />
+      </motion.div>
     </section>
   );
 }

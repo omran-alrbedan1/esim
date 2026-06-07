@@ -25,7 +25,9 @@ export default function Home() {
         <WhyChooseUs />
       </section>
 
+      <section id="innovative">
       <InnovativeShop />
+      </section>
 
       <section id="features">
         <AwesomeFeatures />
