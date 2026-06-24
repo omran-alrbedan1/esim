@@ -1,27 +1,27 @@
 {
   "metadata": {
-    "title": {
-      "default": "Beyond Gluten | أول منصة متكاملة لمنتجات وخدمات الخالي من الجلوتين",
-      "template": "%s | Beyond Gluten"
-    },
-    "description": "منصة Beyond Gluten الأولى في العالم العربي لمنتجات وخدمات Gluten-Free. تسوق آمن، مجتمع داعم، ومحتوى معتمد طبياً لمرضى السيلياك والمهتمين بالصحة.",
-    "keywords": "خالي من الجلوتين, منتجات جلوتين فري, سيلياك, حساسية القمح, مطاعم خالية من الجلوتين, وصفات بدون جلوتين, Beyond Gluten, gluten free jordan, gluten free arabic"
+    "title": "Net eSIM",
+    "template": "%s | Net eSIM",
+    "description": "باقات eSIM سريعة وبأسعار معقولة لأكثر من 190 دولة. تفعيل فوري بدون رسوم تجوال.",
+    "keywords": "شريحة الكترونية, esim سفر, esim عالمي, بيانات جوال, net esim, تجوال دولي"
   },
   "footer": {
-    "social": {
-      "facebook": "فيسبوك",
-      "twitter": "تويتر",
-      "instagram": "انستغرام",
-      "linkedin": "لينكد إن"
-    },
-    "links": {
-      "about": "عن المنصة",
-      "terms": "الشروط والأحكام",
-      "privacy": "سياسة الخصوصية",
-      "contact": "اتصل بنا"
-    },
-    "copyright": "حقوق النشر © {year}",
-    "allRightsReserved": "جميع الحقوق محفوظة.",
+    "copyright": "© 2026 Net eSIM. جميع الحقوق محفوظة.",
+    "tagline": "اتصال عالمي بسيط لكل رحلة.",
+    "explore": "استكشف",
+    "help": "المساعدة",
+    "app": "حمّل التطبيق",
+    "destinations": "الوجهات",
+    "plans": "الباقات",
+    "support": "الدعم",
+    "about": "من نحن",
+    "company": "الشركة",
+    "legal": "روابط قانونية",
+    "contact": "اتصل بنا",
+    "becomePartner": "كن شريكاً",
+    "privacy": "سياسة الخصوصية",
+    "terms": "الشروط والأحكام",
+    "refund": "سياسة الاسترداد",
     "poweredBy": "مدعوم من"
   }
 }

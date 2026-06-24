@@ -1,11 +1,11 @@
 {
-  "name": "Beyond Gluten",
-  "short_name": "BeyondGluten",
-  "description": "Gluten-Free, Full of Flavor - Beyond Gluten platform for gluten-free products and services",
+  "name": "Net eSIM",
+  "short_name": "Net eSIM",
+  "description": "Global travel eSIM packages — instant activation, no roaming fees.",
   "start_url": "/en",
   "display": "standalone",
   "background_color": "#fff8f0",
-  "theme_color": "#cc7a3a",
+  "theme_color": "#160423",
   "icons": [
     {
       "src": "/images/logo.png",

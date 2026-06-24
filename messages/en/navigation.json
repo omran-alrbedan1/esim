@@ -1,6 +1,15 @@
 {
+  "metadata": {
+    "title": "Navigation",
+    "description": "Site navigation"
+  },
   "home": "Home",
   "about": "About Us",
   "contact": "Contact Us",
-  "policies": "Privacy Policy"
+  "policies": "Privacy Policy",
+  "destinations": "Destinations",
+  "how": "How it works",
+  "plans": "Plans",
+  "packages": "Get Packages",
+  "install": "How to install eSIM"
 }

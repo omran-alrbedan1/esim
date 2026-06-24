@@ -1,40 +1,52 @@
 {
-    "metadata": {
-        "title": "اتصل بنا | Beyond Gluten",
-        "description": "تواصل مع فريق Beyond Gluten للاستفسارات، الشراكات، أو الدعم الفني. هاتف: +962780185759 | إيميل: info@futxtech.com",
-        "keywords": "اتصل بنا beyond gluten, دعم فني جلوتين فري, شراكة منصة gluten free, futurex contact",
-        "openGraph": {
-            "title": "اتصل بفريق Beyond Gluten",
-            "description": "نحن هنا لمساعدتك - تواصل معنا عبر الهاتف أو الإيميل أو واتساب"
-        }
-    },
-     "tag": "اتصل بنا",
-    "title": "دعنا <green>نتواصل</green>",
-    "subtitle": "لديك أسئلة حول Beyond Gluten؟ نود أن نسمع منك. تواصل مع فريقنا وسنرد عليك خلال 24 ساعة.",
-    "cta_primary": "أرسل رسالة",
-    "cta_secondary": "جدولة مكالمة",
-    "form": {
-        "name": "الاسم",
-        "namePlaceholder": "اكتب اسمك",
-        "email": "البريد الإلكتروني",
-        "emailPlaceholder": "اكتب بريدك الإلكتروني",
-        "message": "رسالتك",
-        "messagePlaceholder": "اكتب رسالتك هنا",
-        "submit": "إرسال الرسالة",
-        "success": "شكراً لك! تم إرسال رسالتك بنجاح.",
-        "error": "عذراً، حدث خطأ ما. يرجى المحاولة مرة أخرى."
-    },
-    "info": {
-        "title": "معلوماتنا",
-        "email": "للاستفسارات، راسلنا على info@beyondgluten.com",
-        "phone": "اتصل بنا على +962 7 8018 5759",
-        "address": "عمان، الأردن"
-    },
-    "social": {
-        "title": "تابعنا",
-        "facebook": "فيسبوك",
-        "instagram": "انستغرام",
-        "twitter": "تويتر",
-        "linkedin": "لينكد إن"
+  "seo": {
+    "title": "اتصل بنا | Net eSIM",
+    "description": "اتصل بفريق Net eSIM للاستفسارات أو الشراكات أو الدعم الفني.",
+    "keywords": "اتصل بنا, اسعار نت esim, دعم, شريحة الكترونية",
+    "ogTitle": "اتصل بـ Net eSIM — نحن هنا للمساعدة",
+    "ogDescription": "تواصل مع فريقنا لأي استفسار حول شريحتك الإلكترونية.",
+    "ogImage": "/og-image.jpg",
+    "twitterTitle": "اتصل بـ Net eSIM — نحن هنا للمساعدة",
+    "twitterDescription": "تواصل مع فريقنا لأي استفسار حول شريحتك الإلكترونية."
+  },
+  "metadata": {
+    "title": "اتصل بنا | Net eSIM",
+    "description": "اتصل بفريق Net eSIM للاستفسارات أو الشراكات أو الدعم الفني.",
+    "keywords": "اتصل بنا, اسعار نت esim, دعم, شريحة الكترونية",
+    "openGraph": {
+      "title": "اتصل بـ Net eSIM — نحن هنا للمساعدة",
+      "description": "تواصل مع فريقنا لأي استفسار حول شريحتك الإلكترونية."
     }
+  },
+  "tag": "اتصل بنا",
+  "title": "<span>تواصل</span> معنا.",
+  "subtitle": "لديك استفسار عن شريحتك أو تحتاج مساعدة في اختيار باقة؟ يسعدنا التواصل معك.",
+  "cta_primary": "أرسل رسالة",
+  "cta_secondary": "احجز مكالمة",
+  "form": {
+    "name": "الاسم",
+    "namePlaceholder": "اسمك",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "بريدك الإلكتروني",
+    "message": "الرسالة",
+    "messagePlaceholder": "أخبرنا كيف يمكننا مساعدتك...",
+    "submit": "أرسل الرسالة",
+    "success": "شكراً لك! تم إرسال رسالتك. سنتواصل معك قريباً.",
+    "error": "حدث خطأ ما. حاول مرة أخرى أو راسلنا مباشرة على البريد الإلكتروني."
+  },
+  "info": {
+    "title": "تواصل معنا",
+    "email": "support@netesim.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "عمان، الأردن"
+  },
+  "social": {
+    "title": "تابعنا",
+    "facebook": "فيسبوك",
+    "instagram": "انستغرام",
+    "twitter": "تويتر",
+    "linkedin": "لينكد إن",
+    "email": "البريد الإلكتروني",
+    "whatsapp": "واتساب"
+  }
 }

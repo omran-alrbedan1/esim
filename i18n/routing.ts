@@ -10,6 +10,16 @@ export const routing = defineRouting({
     '/about': '/about',
     '/contact': '/contact',
     '/policies': '/policies',
+    '/privacy': '/privacy',
+    '/packages': '/packages',
+    '/device-support': '/device-support',
+    '/how-to-install-esim': '/how-to-install-esim',
+    '/become-partner': '/become-partner',
+    '/terms': '/terms',
+    '/terms-of-use': '/terms-of-use',
+    '/refund': '/refund',
+    '/cookie': '/cookie',
+    '/sitemap': '/sitemap',
   }
 });
 

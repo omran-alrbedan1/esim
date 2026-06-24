@@ -1,21 +1,18 @@
-import type { Metadata } from 'next';
-import { getContactPageMetadata } from '@/lib/metadata';
-import { ContactHero, ContactFormSection } from '@/components/contact';
+import type { Metadata } from "next";
+import type { Locale } from "@/lib/i18n";
+import { getPageMetadata } from "@/lib/metadata";
+import ContactClient from './ContactClient';
+
 
 export async function generateMetadata({
-  params
+  params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return getContactPageMetadata({ locale });
+  return getPageMetadata({ locale, page: "contact", path: "/contact" });
 }
 
 export default function ContactPage() {
-  return (
-    <main className="min-h-screen ">
-      <ContactHero />
-      <ContactFormSection />
-    </main>
-  );
+  return <ContactClient />;
 }

@@ -1,69 +1,94 @@
 {
+  "seo": {
+    "title": "About Us | Net eSIM",
+    "description": "Learn about Net eSIM and our mission to make global connectivity simple and affordable for every traveler.",
+    "keywords": "about net esim, global esim, esim travel, digital sim, futurex",
+    "ogTitle": "About Net eSIM — Global Connectivity Made Simple",
+    "ogDescription": "Discover how Net eSIM is transforming travel connectivity with instant digital SIMs.",
+    "ogImage": "/og-image.jpg",
+    "twitterTitle": "About Net eSIM — Global Connectivity Made Simple",
+    "twitterDescription": "Discover how Net eSIM is transforming travel connectivity with instant digital SIMs."
+  },
   "metadata": {
-    "title": "About Us | Beyond Gluten",
-    "description": "Learn about the story of Beyond Gluten and our vision for a gluten-free world. Developed by FutureX Digital Solutions in Jordan.",
-    "keywords": "about beyond gluten, beyond gluten team, futurex jordan, gluten free platform about us",
+    "title": "About Us | Net eSIM",
+    "description": "Learn about Net eSIM and our mission to make global connectivity simple and affordable for every traveler.",
+    "keywords": "about net esim, global esim, esim travel, digital sim, futurex",
     "openGraph": {
-      "title": "About Us - Beyond Gluten | Our Vision & Mission",
-      "description": "Towards a world where food allergies are not a barrier. Get to know our team and values."
+      "title": "About Net eSIM — Global Connectivity Made Simple",
+      "description": "Discover how Net eSIM is transforming travel connectivity with instant digital SIMs."
     }
   },
-  "title": "About Beyond Gluten",
-  "subtitle": "Our journey to bring gluten-free joy to everyone",
+  "hero": {
+    "tag": "ABOUT US",
+    "title": "Global connectivity, <span>simplified</span>.",
+    "subtitle": "We believe staying connected shouldn't be complicated. Net eSIM gives you instant, affordable data wherever you go.",
+    "cta_primary": "Explore Plans",
+    "cta_secondary": "Our Mission",
+    "scroll_indicator": "Scroll Down",
+    "feature_title": "Connection that <span>travels with you</span>",
+    "feature_body": "Net Sim is a digital connectivity platform providing mobile data services using modern eSIM technology. Users will be able to activate mobile data plans worldwide without using physical SIM cards.",
+    "cta_how": "How eSIM Works",
+    "cta_learn": "Learn More",
+    "graphic_floating": "Connect <span>without limits,</span> wherever you are"
+  },
   "mission": {
     "title": "Our Mission",
-    "body": "At Beyond Gluten, we believe that going gluten-free shouldn't mean compromising on taste. Our mission is to create delicious, high-quality gluten-free products that everyone can enjoy — whether you have celiac disease, gluten sensitivity, or simply choose a gluten-free lifestyle."
-  },
-  "hero": {
-    "tag": "Integrated Platform",
-    "title": "One Platform For Everything <green>Gluten-Free</green>",
-    "subtitle": "Beyond Gluten combines marketplace, community, and health awareness in one unified platform. Shop certified products, connect with others, and access expert-approved content - all in one place.",
-    "cta_primary": "Explore Platform",
-    "cta_secondary": "Our Story",
-    "scroll_indicator": "Learn More"
-  },
-  "story": {
-    "title": "Our Story",
-    "heading": "How It Started",
-    "body": "Founded with a passion for baking and a commitment to inclusivity, Beyond Gluten started in a small kitchen with a simple goal: make gluten-free food that tastes as good as the real thing. Today, we continue to innovate and expand our product line, bringing smiles to tables everywhere."
-  },
-  "video": {
-    "title": "Watch Our Story",
-    "heading": "Meet Beyond Gluten",
-    "body": "Watch a short introduction to our mission, vision, and the people behind Beyond Gluten. See how we're transforming the gluten-free experience for thousands of users worldwide.",
-    "additionalBody": "Since our founding, we've grown from a small kitchen operation to a trusted name in gluten-free living. Our dedicated team of nutritionists, chefs, and technologists work around the clock to ensure every product and piece of content meets the highest standards of safety and quality.",
-    "didYouKnow": "Did You Know?",
-    "fact": "Over 10,000+ gluten-free products have been certified through our platform, helping thousands of families enjoy safe, delicious meals every day."
+    "body": "At Net eSIM, we're on a mission to eliminate roaming fees and make global connectivity accessible to everyone. We partner with leading telecom operators worldwide to bring you reliable data at fair prices — delivered digitally, instantly.",
+    "heading": "Make global connectivity effortless",
+    "body_simple": "To give every traveler access to reliable internet through a service that is genuinely simple, transparent in pricing, and built around how people actually travel today."
   },
   "vision": {
     "title": "Our Vision",
-    "body": "A world where gluten-free living is seamless, delicious, and accessible to everyone everywhere. We envision a future where dietary restrictions never hold anyone back from enjoying life's simple pleasures."
+    "body": "A world where every traveler can stay connected without thinking about it. No SIM swapping, no bill shock, no coverage anxiety. Just seamless, affordable data wherever you go.",
+    "heading": "A world where the physical SIM is history",
+    "body_simple": "A future where every traveler arrives at their destination already connected — where a data plan is as effortless to arrange as a boarding pass, and just as reliable."
   },
   "values": {
     "title": "What We Stand For",
     "items": [
       {
-        "title": "Quality First",
-        "description": "We never compromise on ingredients or taste. Every product meets our rigorous quality standards before reaching your table."
+        "title": "Transparency",
+        "description": "Clear pricing with no hidden fees. What you see is what you pay."
       },
       {
-        "title": "Innovation",
-        "description": "We continuously innovate to create products that surprise and delight our customers with new flavors and experiences."
+        "title": "Reliability",
+        "description": "Dual network coverage across 190+ countries ensures you're always connected."
       },
       {
-        "title": "Community",
-        "description": "We build a supportive community where everyone feels welcome, understood, and empowered in their gluten-free journey."
+        "title": "Simplicity",
+        "description": "From purchase to activation in under 2 minutes. No paperwork, no hassle."
       },
       {
-        "title": "Trust",
-        "description": "Transparency and integrity guide everything we do, from sourcing ingredients to packaging and delivery."
+        "title": "Support",
+        "description": "24/7 multilingual support whenever you need help on your journey."
       }
     ]
   },
   "stats": {
-    "years": "Years of expertise",
-    "stores": "Partner stores",
-    "products": "Products available",
-    "customers": "Happy customers"
+    "years": "Years serving travelers",
+    "countries": "Countries covered",
+    "customers": "Happy customers",
+    "networks": "Network partners"
+  },
+  "story": {
+    "title": "Our Story",
+    "heading": "How We Started",
+    "body": "Net eSIM was born from a simple frustration: why is staying connected while traveling so expensive and complicated? Founded by a team of telecom and travel enthusiasts, we set out to build the easiest way to get mobile data abroad. Today, we serve travelers from over 190 countries.",
+    "tag": "Our Story",
+    "featured_heading": "Born from a frustration every traveler knows",
+    "featured_body": "Net Sim is a digital connectivity platform developed and operated by NET NOVA GROUP LTD in London, United Kingdom. Our mission is to simplify global connectivity by allowing users to install and activate mobile data plans digitally using eSIM technology.",
+    "airport_text": "It starts at the airport. You land, tired from a long flight, and face the same ritual: find the SIM kiosk, fill in forms, wait — then hope the coverage actually includes your route.",
+    "conviction_text": "Net Sim was built on one conviction: your connection should be ready before your bag is packed. No queues, no physical SIM, no surprise charges.",
+    "unacceptable_text": "We found it unacceptable that millions of travelers go through this every single day. The infrastructure to do better already existed. What was missing was the will to build it properly.",
+    "stat_languages": "Language",
+    "stat_partners": "Partner"
+  },
+  "video": {
+    "title": "Watch Our Story",
+    "heading": "Meet Net eSIM",
+    "body": "See how Net eSIM is changing the way travelers stay connected around the world.",
+    "additionalBody": "From a small startup to a trusted travel companion, our journey has always been about making connectivity simple, affordable, and accessible for everyone.",
+    "didYouKnow": "Did You Know?",
+    "fact": "Net eSIM has connected over 2 million travelers across 190+ countries, saving them an average of $40 per trip in roaming fees."
   }
 }

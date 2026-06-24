@@ -1,23 +1,23 @@
-import type { Metadata } from 'next';
-import { getAboutPageMetadata } from '@/lib/metadata';
-import { AboutHero, AboutMission, AboutVision, AboutVideo } from '@/components/about';
+import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/metadata";
+import { AboutHero } from '@/components/about';
+import { StorySection } from '@/components/about/StorySection';
+import { VisionMissionSection } from '@/components/about/VisionMissionSection';
+import { HomeTimeline } from "@/components/home";
+import { getLocale } from "next-intl/server";
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return getAboutPageMetadata({ locale });
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return getPageMetadata({ locale, page: "about", path: "/about" });
 }
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen ">
+    <main className="overflow-x-hidden">
       <AboutHero />
-      <AboutVideo />
-      <AboutMission />
-      <AboutVision />
+      <StorySection />
+      <VisionMissionSection />
+      <HomeTimeline />  
     </main>
   );
 }

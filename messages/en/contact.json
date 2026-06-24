@@ -1,40 +1,52 @@
 {
-    "metadata": {
-        "title": "Contact Us | Beyond Gluten",
-        "description": "Contact the Beyond Gluten team for inquiries, partnerships, or technical support. Phone: +962780185759 | Email: info@futxtech.com",
-        "keywords": "contact us beyond gluten, gluten free tech support, gluten free platform partnership, futurex contact",
-        "openGraph": {
-            "title": "Contact the Beyond Gluten Team",
-            "description": "We are here to help - contact us via phone, email, or WhatsApp"
-        }
-    },
-    "tag": "Contact Us",
-    "title": "Let's <green>Connect</green>",
-    "subtitle": "Have questions about Beyond Gluten? We'd love to hear from you. Reach out to our team and we'll get back to you within 24 hours.",
-    "cta_primary": "Send Message",
-    "cta_secondary": "Schedule a Call",
-    "form": {
-        "name": "Name",
-        "namePlaceholder": "Your Name",
-        "email": "Email",
-        "emailPlaceholder": "Your Email",
-        "message": "Message",
-        "messagePlaceholder": "Your Message",
-        "submit": "Send Message",
-        "success": "Thank you! Your message has been sent.",
-        "error": "Sorry, something went wrong. Please try again."
-    },
-    "info": {
-        "title": "Our Information",
-        "email": "info@beyondgluten.com",
-        "phone": "+962 7 8018 5759",
-        "address": "Amman, Jordan"
-    },
-    "social": {
-        "title": "Follow Us",
-        "facebook": "Facebook",
-        "instagram": "Instagram",
-        "twitter": "Twitter",
-        "linkedin": "LinkedIn"
+  "seo": {
+    "title": "Contact Us | Net eSIM",
+    "description": "Contact the Net eSIM team for inquiries, partnerships, or technical support.",
+    "keywords": "contact net esim, esim support, travel connectivity help, net esim contact",
+    "ogTitle": "Contact Net eSIM — We're Here to Help",
+    "ogDescription": "Get in touch with our team for any questions about your eSIM.",
+    "ogImage": "/og-image.jpg",
+    "twitterTitle": "Contact Net eSIM — We're Here to Help",
+    "twitterDescription": "Get in touch with our team for any questions about your eSIM."
+  },
+  "metadata": {
+    "title": "Contact Us | Net eSIM",
+    "description": "Contact the Net eSIM team for inquiries, partnerships, or technical support.",
+    "keywords": "contact net esim, esim support, travel connectivity help, net esim contact",
+    "openGraph": {
+      "title": "Contact Net eSIM — We're Here to Help",
+      "description": "Get in touch with our team for any questions about your eSIM."
     }
+  },
+  "tag": "CONTACT US",
+  "title": "Let's <span>connect</span>.",
+  "subtitle": "Have questions about your eSIM or need help with a plan? We'd love to hear from you.",
+  "cta_primary": "Send Message",
+  "cta_secondary": "Schedule a Call",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "Your email address",
+    "message": "Message",
+    "messagePlaceholder": "Tell us how we can help...",
+    "submit": "Send Message",
+    "success": "Thank you! Your message has been sent. We'll get back to you shortly.",
+    "error": "Something went wrong. Please try again or email us directly."
+  },
+  "info": {
+    "title": "Get in Touch",
+    "email": "support@netesim.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "Amman, Jordan"
+  },
+  "social": {
+    "title": "Follow Us",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "whatsapp": "WhatsApp"
+  }
 }

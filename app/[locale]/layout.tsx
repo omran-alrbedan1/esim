@@ -5,14 +5,18 @@ import Navbar from '@/components/Navbar';
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { getRootLayoutMetadata } from "@/lib/metadata";
+import { locales, type Locale } from "@/lib/i18n";
 import { JsonLd } from "../JsonLd";
+import { Cta } from "@/components/Cta";
 
-
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
   return getRootLayoutMetadata({ locale });
@@ -23,23 +27,22 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
   const messages = await getMessages();
   const direction = locale === 'ar' ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={direction} suppressHydrationWarning className="h-full antialiased">
+    <html lang={locale} dir={direction} suppressHydrationWarning>
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main>{children}</main>
+          <Cta />
           <Footer />
         </NextIntlClientProvider>
       </body>

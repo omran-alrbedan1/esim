@@ -1,39 +1,31 @@
 export const IMAGES={
-  logo:'/images/logo.png',
+  logo1:'/images/logo1.png',
+  logo2:'/images/logo2.png',
 }
 
 export const HOME_IMAGES = {
-  hero: {
-    hero1: '/images/home/hero1.png',
-    hero2: '/images/home/hero2.png',
-    hero3_english: '/images/home/hero3_english.png',
-    hero3_arabic: '/images/home/hero3_arabic.png',
-  },
-  whyChooseUs:{
-    certificate: '/images/home/certification.svg',
-    vending: '/images/home/fork-and-knife.svg',
-    medicine: '/images/home/medicine.svg',
-  },
-  awesomeFeatures_english: '/images/home/awesomeFeatures_english.png',
-  awesomeFeatures_arabic: '/images/home/awesomeFeatures_arabic.png',
-  innovativeShop: '/images/home/InnovativeShop.png',
-  clientReviews: '/images/home/ClientReviews1.png',
-  appDownloadScreenshots: {
-    screen1: '/images/home/AppDownloadAndScreenshots1.png',
-    screen2: '/images/home/AppDownloadAndScreenshots2.png',
-    screen3: '/images/home/AppDownloadAndScreenshots3.png',
-    screen4: '/images/home/AppDownloadAndScreenshots4.png',
-  },
-  contactUs: '/images/home/ContactUs.png',
+    hero_english: '/images/home/hero.png',
+    hero_english_mobile: '/images/home/hero_mobile.png',
+    hero_arabic: '/images/home/hero_arabic.png',
+    hero_arabic_mobile: '/images/home/hero_arabic_mobile.png',
+    world: '/images/home/world.png',
+    decorate: '/images/home/decorate.png',
+    becomePartner: '/images/home/become_partner.png',
 } as const;
 
 export const ABOUT_IMAGES = {
-  hero_english: '/images/about/about_english.png',
-  hero_arabic: '/images/about/about_arabic.png',
-  mission: '/images/about/our_mission.png',
-  vision: '/images/about/our_vission.png',
-  story: '/images/about/story.png',
-  stats: '/images/about/stats.png',
+  hero:'/images/about/about_hero.png',
+  hero2:'/images/about/about_hero2.jpeg',
+} as const; 
+export const FRAMES = {
+  frame1:'/images/frames/frame1.jpeg',
+  frame2:'/images/frames/frame2.png',
+  frame3:'/images/frames/frame3.png',
+  frame4:'/images/frames/frame4.png',
+} as const; 
+
+export const DEVICE_SUPPORT_IMAGES = {
+  hero:'/images/device-supoort/support.png',
 } as const; 
 
 export const CONTACT_IMAGES = {

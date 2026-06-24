@@ -1,27 +1,27 @@
 {
   "metadata": {
-    "title": {
-      "default": "Beyond Gluten | The First Integrated Platform for Gluten-Free Products & Services",
-      "template": "%s | Beyond Gluten"
-    },
-    "description": "Beyond Gluten is the first platform in the Arab world for Gluten-Free products and services. Safe shopping, a supportive community, and medically approved content for celiac patients and health enthusiasts.",
-    "keywords": "gluten-free, gluten-free products, celiac, wheat allergy, gluten-free restaurants, gluten-free recipes, Beyond Gluten, gluten free jordan, gluten free arabic"
+    "title": "Net eSIM",
+    "template": "%s | Net eSIM",
+    "description": "Fast, affordable eSIM data plans for 190+ countries. Instant activation, no roaming fees.",
+    "keywords": "esim, travel esim, global esim, mobile data, net esim, international roaming"
   },
   "footer": {
-    "social": {
-      "facebook": "Facebook",
-      "twitter": "Twitter",
-      "instagram": "Instagram",
-      "linkedin": "LinkedIn"
-    },
-    "links": {
-      "about": "About",
-      "terms": "Terms & Conditions",
-      "privacy": "Privacy Policy",
-      "contact": "Contact"
-    },
-    "copyright": "Copyright © {year}",
-    "allRightsReserved": "All rights reserved.",
+    "copyright": "© 2026 Net eSIM. All rights reserved.",
+    "tagline": "Simple global connectivity for every journey.",
+    "explore": "Explore",
+    "help": "Help",
+    "app": "Get the app",
+    "destinations": "Destinations",
+    "plans": "Plans",
+    "support": "Support",
+    "about": "About us",
+    "company": "Company",
+    "legal": "Legal Links",
+    "contact": "Contact",
+    "becomePartner": "Become a Partner",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "refund": "Refund Policy",
     "poweredBy": "Powered by"
   }
 }

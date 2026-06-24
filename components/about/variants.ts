@@ -1,89 +1,90 @@
-import type { Variants } from 'framer-motion';
-import { cubicBezier } from 'framer-motion';
+export const fadeUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
-export const aboutContainerVariants: Variants = {
+export const topCardVariants = {
+  hidden: { opacity: 0, y: -80, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 90,
+      damping: 16,
+    },
+  },
+};
+
+export const bottomCardVariants = {
+  hidden: { opacity: 0, y: 80, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 90,
+      damping: 16,
+    },
+  },
+};
+
+export const circleTopLeftVariants = {
+  hidden: { opacity: 0, x: -100, rotate: -180, scale: 0.6 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 110,
+      damping: 14,
+      duration: 0.8,
+    },
+  },
+};
+
+export const circleBottomRightVariants = {
+  hidden: { opacity: 0, x: 100, rotate: 180, scale: 0.6 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 110,
+      damping: 14,
+      duration: 0.8,
+    },
+  },
+};
+
+export const staggerContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.6,
-      staggerChildren: 0.2,
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
     },
   },
 };
 
-export const aboutTextVariants: Variants = {
-  hidden: { opacity: 0, x: -30 },
+export const imageCardVariants = {
+  hidden: { opacity: 0, x: -60, scale: 0.9 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.6,
-      ease: cubicBezier(0.21, 0.47, 0.32, 0.98),
-    },
-  },
-};
-
-export const aboutVideoVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95, y: 30 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: cubicBezier(0.21, 0.47, 0.32, 0.98),
-      delay: 0.2,
-    },
-  },
-};
-
-export const aboutBadgeVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.4,
-      delay: 0.1,
-    },
-  },
-};
-
-export const aboutStoryImageVariants: Variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 20,
       duration: 0.8,
-      ease: cubicBezier(0.21, 0.47, 0.32, 0.98),
-    },
-  },
-};
-
-export const aboutStatCardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      delay: 0.1 * index,
-      ease: 'easeOut' as const,
-    },
-  }),
-};
-
-export const aboutStatValueVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.5 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 200,
-      damping: 25,
     },
   },
 };

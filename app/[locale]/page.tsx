@@ -1,53 +1,30 @@
 import type { Metadata } from "next";
-import AppScreenshotsClient from "@/components/home/AppScreenshotsClient";
-import ClientReviewsClient from "@/components/home/ClientReviewsClient";
-import ContactUsClient from "@/components/home/ContactUsClient";
-import { AppDownload, AwesomeFeatures, WhyChooseUs, InnovativeShop, Hero } from "@/components/home";
-import { getHomePageMetadata } from "@/lib/metadata";
+import { locales, type Locale } from "@/lib/i18n";
+import { getPageMetadata } from "@/lib/metadata";
+import { HomeDestinations, HomeFaq, HomeHero, HomeHow, HomeTimeline, HomeTrustedBrands } from "@/components/home";
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return getHomePageMetadata({ locale });
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
 
-export default function Home() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return getPageMetadata({ locale, page: "home", path: "" });
+}
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#F9F9F9]">
-      <section id="home">
-        <Hero />
-      </section>
-
-      <section id="about">
-        <WhyChooseUs />
-      </section>
-
-      <section id="innovative">
-      <InnovativeShop />
-      </section>
-
-      <section id="features">
-        <AwesomeFeatures />
-      </section>
-
-      <section id="download">
-        <AppDownload />
-      </section>
-
-      <section id="screenshots">
-        <AppScreenshotsClient />
-      </section>
-
-      <section id="testimonials">
-        <ClientReviewsClient />
-      </section>
-
-      <section id="contact">
-        <ContactUsClient />
-      </section>
+    <main className="overflow-x-hidden">
+      <HomeHero />
+      <HomeDestinations />
+      <HomeTrustedBrands />
+      <HomeHow />
+      <HomeTimeline />
+      <HomeFaq />
     </main>
   );
 }

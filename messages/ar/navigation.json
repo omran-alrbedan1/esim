@@ -1,6 +1,15 @@
 {
+  "metadata": {
+    "title": "التنقل",
+    "description": "قائمة التنقل في الموقع"
+  },
   "home": "الرئيسية",
   "about": "من نحن",
   "contact": "اتصل بنا",
-  "policies": "سياسة الخصوصية"
+  "policies": "سياسة الخصوصية",
+  "destinations": "الوجهات",
+  "how": "كيف تعمل",
+  "plans": "الباقات",
+  "packages": "الباقات",
+  "install": "طريقة تثبيت eSIM"
 }

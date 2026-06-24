@@ -6,9 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/ar/policies", "/en/policies"],
+        disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://beyond-gluten.vercel.app/sitemap.xml",
+    sitemap: "https://netesim.com/sitemap.xml",
   };
 }

@@ -1,46 +1,44 @@
 import type { MetadataRoute } from "next";
+import { locales } from "@/lib/i18n";
 
-const BASE_URL = "https://beyond-gluten.vercel.app";
+const BASE_URL = "https://netesim.com";
+
+const pages = [
+  { path: "", priority: 1.0, changeFrequency: "weekly" as const },
+  { path: "/packages", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/become-partner", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/device-support", priority: 0.6, changeFrequency: "monthly" as const },
+  { path: "/how-to-install-esim", priority: 0.6, changeFrequency: "monthly" as const },
+  { path: "/privacy", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/terms", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/terms-of-use", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/refund", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/cookie", priority: 0.3, changeFrequency: "yearly" as const },
+  { path: "/policies", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/sitemap", priority: 0.3, changeFrequency: "monthly" as const },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = ["en", "ar"];
-  const pages = ["", "about", "contact", "policies"];
-
-  const routes: MetadataRoute.Sitemap = [];
+  const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {
     for (const page of pages) {
-      let url = `${BASE_URL}/${locale}`;
-
-      if (page !== "") {
-        url += `/${page}`;
-      }
-
-      let priority = 0.8;
-      let changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] = "monthly";
-
-      if (page === "") {
-        priority = 1.0;
-        changeFrequency = "weekly";
-      } else if (page === "about") {
-        priority = 0.8;
-        changeFrequency = "monthly";
-      } else if (page === "contact") {
-        priority = 0.6;
-        changeFrequency = "yearly";
-      } else if (page === "policies") {
-        priority = 0.4;
-        changeFrequency = "yearly";
-      }
-
-      routes.push({
+      const url = `${BASE_URL}/${locale}${page.path}`;
+      entries.push({
         url,
         lastModified: new Date(),
-        changeFrequency,
-        priority,
+        changeFrequency: page.changeFrequency,
+        priority: page.priority,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((l) => [l, `${BASE_URL}/${l}${page.path}`])
+          ),
+        },
       });
     }
   }
 
-  return routes;
+  return entries;
 }
