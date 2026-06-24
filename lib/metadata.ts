@@ -11,13 +11,17 @@ const PAGE_OG_IMAGES: Record<string, string> = {
 };
 
 export async function getRootLayoutMetadata({ locale }: { locale: Locale }): Promise<Metadata> {
+  const t = await getTranslations(locale, 'layout');
+  const meta = t.metadata;
+
   return {
     metadataBase: new URL(BASE_URL),
     title: {
-      default: 'Net eSIM',
-      template: '%s | Net eSIM',
+      default: meta.title,
+      template: meta.template,
     },
-    description: 'Instant travel eSIM packages, device support, and global connectivity before you fly.',
+    description: meta.description,
+    keywords: meta.keywords,
     authors: [{ name: 'Net eSIM' }],
     creator: 'Net eSIM',
     publisher: 'Net eSIM',
@@ -33,16 +37,16 @@ export async function getRootLayoutMetadata({ locale }: { locale: Locale }): Pro
     icons: { icon: '/favicon.ico' },
     openGraph: {
       type: 'website',
-      siteName: 'Net eSIM',
-      title: 'Net eSIM',
-      description: 'Instant travel eSIM packages, device support, and global connectivity before you fly.',
+      siteName: meta.title,
+      title: meta.title,
+      description: meta.description,
       url: `${BASE_URL}/${locale}`,
       images: [`${BASE_URL}/og-image.jpg`],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Net eSIM',
-      description: 'Instant travel eSIM packages, device support, and global connectivity before you fly.',
+      title: meta.title,
+      description: meta.description,
       images: [`${BASE_URL}/og-image.jpg`],
     },
   };
