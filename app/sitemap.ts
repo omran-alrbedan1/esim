@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 
-const BASE_URL = "https://netesim.com";
+const BASE_URL = "https://esim-wine.vercel.app";
 
 const pages = [
   { path: "", priority: 1.0, changeFrequency: "weekly" as const },

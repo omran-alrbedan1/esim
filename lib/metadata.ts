@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from './getTranslations';
 import { locales, type Locale } from './i18n';
 
-const BASE_URL = 'https://netesim.com';
+const BASE_URL = 'https://esim-wine.vercel.app';
 
 const PAGE_OG_IMAGES: Record<string, string> = {
   home: '/og-image.jpg',  

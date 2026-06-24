@@ -1,4 +1,4 @@
-const BASE_URL = 'https://netesim.com';
+const BASE_URL = 'https://esim-wine.vercel.app';
 
 const organization = {
   '@context': 'https://schema.org',
