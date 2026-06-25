@@ -5,6 +5,7 @@ import { StorySection } from '@/components/about/StorySection';
 import { VisionMissionSection } from '@/components/about/VisionMissionSection';
 import { HomeTimeline } from "@/components/home";
 import { getLocale } from "next-intl/server";
+import { locales } from "@/lib/i18n";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();

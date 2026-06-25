@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
+import { getPageMetadata } from "@/lib/metadata";
+import { getLocale } from "next-intl/server";
 import { Check, ChevronRight, Search, Smartphone } from 'lucide-react';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return getPageMetadata({
+    locale,
+    path: "/packages",
+    title: "eSIM Packages | Net eSIM",
+    description: "Browse Net eSIM data packages for travel destinations, with clear durations, data amounts, and quick digital activation.",
+  });
+}
 
 const amounts = ['1GB', '5GB', '10GB', '20GB', 'Unlimited'];
 const durations = [

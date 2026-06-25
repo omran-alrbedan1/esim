@@ -5,13 +5,9 @@ import Navbar from '@/components/Navbar';
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { getRootLayoutMetadata } from "@/lib/metadata";
-import { locales, type Locale } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 import { JsonLd } from "../JsonLd";
 import { Cta } from "@/components/Cta";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 export async function generateMetadata({
   params

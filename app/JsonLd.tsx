@@ -1,12 +1,12 @@
-const BASE_URL = 'https://esim-wine.vercel.app';
+import { SITE_URL } from '@/lib/metadata';
 
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': `${BASE_URL}/#organization`,
+  '@id': `${SITE_URL}/#organization`,
   name: 'Net eSIM',
-  url: BASE_URL,
-  logo: `${BASE_URL}/images/logo.png`,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo.png`,
   description: 'Digital travel eSIM packages for global mobile connectivity.',
   contactPoint: {
     '@type': 'ContactPoint',
@@ -26,17 +26,17 @@ const organization = {
 const website = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': `${BASE_URL}/#website`,
-  url: BASE_URL,
+  '@id': `${SITE_URL}/#website`,
+  url: SITE_URL,
   name: 'Net eSIM',
   description: 'Travel eSIM packages, coverage information, and compatibility guidance.',
-  publisher: { '@id': `${BASE_URL}/#organization` },
+  publisher: { '@id': `${SITE_URL}/#organization` },
   inLanguage: ['en', 'ar'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: `${BASE_URL}/en/packages?q={search_term_string}`,
+      urlTemplate: `${SITE_URL}/en/packages?q={search_term_string}`,
     },
     'query-input': 'required name=search_term_string',
   },

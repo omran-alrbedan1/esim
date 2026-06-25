@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
-import { locales, type Locale } from "@/lib/i18n";
+import { locales } from "@/lib/i18n";
+import { getPageMetadata } from "@/lib/metadata";
+import { getLocale } from "next-intl/server";
 import { BadgeCheck, BarChart3, CircleDollarSign, MonitorSmartphone, Share2, Users } from 'lucide-react';
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return getPageMetadata({
+    locale,
+    path: "/become-partner",
     title: "Become a Partner | Net eSIM",
     description: "Partner with Net eSIM and offer eSIM packages to your travel audience. Easy integration, competitive commissions.",
-    alternates: {
-      canonical: `https://netesim.com/${locale}/become-partner`,
-      languages: {
-        'x-default': 'https://netesim.com/en/become-partner',
-        en: `https://netesim.com/en/become-partner`,
-        ar: `https://netesim.com/ar/become-partner`,
-      },
-    },
-  };
+  });
 }
 import { HomeTrustedBrands } from '@/components/home';
 import { Link } from '@/i18n/routing';

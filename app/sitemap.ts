@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
-
-const BASE_URL = "https://esim-wine.vercel.app";
+import { SITE_URL } from "@/lib/metadata";
 
 const pages = [
   { path: "", priority: 1.0, changeFrequency: "weekly" as const },
@@ -25,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of locales) {
     for (const page of pages) {
-      const url = `${BASE_URL}/${locale}${page.path}`;
+      const url = `${SITE_URL}/${locale}${page.path}`;
       entries.push({
         url,
         lastModified: new Date(),
@@ -33,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: page.priority,
         alternates: {
           languages: Object.fromEntries(
-            locales.map((l) => [l, `${BASE_URL}/${l}${page.path}`])
+            locales.map((l) => [l, `${SITE_URL}/${l}${page.path}`])
           ),
         },
       });

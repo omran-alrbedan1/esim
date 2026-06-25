@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/lib/i18n";
 import { getPageMetadata } from "@/lib/metadata";
 import ContactClient from './ContactClient';
+import { getLocale } from "next-intl/server";
 
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
   return getPageMetadata({ locale, page: "contact", path: "/contact" });
 }
 

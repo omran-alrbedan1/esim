@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { FRAMES } from '@/constants/images';
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
@@ -46,7 +47,7 @@ export function VisionMissionSection() {
   const isRTL = locale === 'ar';
 
   return (
-    <section className={`py-16 md:py-24 bg-page-bg-alt flex items-center justify-center min-h-screen ${isRTL ? 'text-right' : ''}`}>
+    <section className={` -my-32 flex items-center justify-center min-h-screen ${isRTL ? 'text-right' : ''}`}>
       <div className="container mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-16 items-start">
 

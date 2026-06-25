@@ -16,6 +16,7 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
     contact,
     footer,
     layout,
+    deviceSupport,
   ] = await Promise.all([
     import(`../messages/${locale}/common.json`),
     import(`../messages/${locale}/navigation.json`),
@@ -24,6 +25,7 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
     import(`../messages/${locale}/contact.json`),
     import(`../messages/${locale}/footer.json`),
     import(`../messages/${locale}/layout.json`),
+    import(`../messages/${locale}/deviceSupport.json`),
   ]);
 
   return {
@@ -35,7 +37,8 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
       about: about.default,
       contact: contact.default,
       footer: footer.default,
-      layout:layout.default
+      layout:layout.default,
+      deviceSupport: deviceSupport.default
     },
     timeZone: 'Asia/Amman'
   };
