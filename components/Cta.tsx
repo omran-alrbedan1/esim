@@ -58,14 +58,13 @@ export function Cta() {
 
             {/* Check Device Module */}
             <motion.div variants={revealVariant} className="relative z-10 mt-6 inline-flex items-center gap-3 rounded-full border border-primary/5 bg-white p-1.5 pr-4 shadow-[0_4px_12px_rgba(122,57,179,0.04)]">
-              <motion.button
+              <Link
+                href="/device-support"
                 className="button button-dark rounded-full px-4 py-2 text-xs font-semibold"
-                whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
-                transition={springSoft}
               >
                 {t('cta.checkDevice')}
-              </motion.button>
-              <Link href="/device-support" className="group inline-flex items-center gap-1 text-xs font-bold text-primary-ink transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:opacity-75">
+              </Link>
+              <Link href="/contact" className="group inline-flex items-center gap-1 text-xs font-bold text-primary-ink transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:opacity-75">
                 <span>{t('cta.learnMore')}</span>
               </Link>
             </motion.div>
