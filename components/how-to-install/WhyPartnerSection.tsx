@@ -145,13 +145,6 @@ const WhyPartnerSection = () => {
         >
           <div className="inline-flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/partner/apply"
-              className="button-light button group"
-            >
-              {t('why.cta')}
-              <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
               href="/contact"
               className="button-dark button"
             >

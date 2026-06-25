@@ -165,18 +165,6 @@ const PartnerBenefitsSection = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Inline Trigger Action Link */}
-            <div className="mt-10">
-              <Link
-                href="/partner/apply"
-                className="button-light button group inline-flex items-center gap-2 shadow-soft"
-              >
-                {t('cta')}
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
           </div>
 
         </div>

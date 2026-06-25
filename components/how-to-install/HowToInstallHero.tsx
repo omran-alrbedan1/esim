@@ -16,7 +16,7 @@ export default function HowToInstallHero() {
       floatingText={t('floatingText')}
       actions={[
         { 
-          href: '/partner', 
+          href: '/about', 
           label: t('primaryCta'), 
           variant: 'primary',
           icon: <Users size={16} />

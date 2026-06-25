@@ -132,22 +132,6 @@ const HowItWorksSection = () => {
             />
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 md:mt-16 text-center"
-        >
-          <Link
-            href="/partner/apply"
-            className="button-light button group inline-flex items-center gap-2"
-          >
-            {t('cta')}
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

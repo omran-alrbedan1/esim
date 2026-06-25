@@ -17,9 +17,8 @@ export default function AboutHero() {
       floatingText={{ __html: t.raw('hero.graphic_floating') }}
       floatingTextIsHtml={true}
       actions={[
-        { href: '/plans', label: t('hero.cta_primary'), variant: 'primary' },
-        { href: '/how-it-works', label: t('hero.cta_how'), variant: 'secondary' },
-        { href: '/support', label: t('hero.cta_learn'), variant: 'text' },
+        { href: '/how-to-install-esim', label: t('hero.cta_how'), variant: 'secondary' },
+        { href: '/contact', label: t('hero.cta_learn'), variant: 'text' },
       ]}
       floatingIcons={[
         { icon: <Rocket size={18} className="transform rotate-45" />, label: "5G" },
