@@ -164,7 +164,7 @@ export async function getPageMetadata({
   if (page) {
     const t = await getTranslations(locale, page);
     const { metadata } = t;
-    console.log(metadata)
+    resolvedTitle = resolvedTitle ||
    metadata.title;
     resolvedDescription = resolvedDescription || metadata.description;
     resolvedKeywords = resolvedKeywords || metadata.keywords;

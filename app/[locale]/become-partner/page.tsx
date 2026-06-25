@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
-import { getPageMetadata } from "import { getPageMetadata } from "@/lib/seo";
-";
 import { BadgeCheck, BarChart3, CircleDollarSign, MonitorSmartphone, Share2, Users } from 'lucide-react';
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
   return getPageMetadata({ locale, page: "becomePartner", path: "/become-partner" });
 }
 import { HomeTrustedBrands } from '@/components/home';
 import { Link } from '@/i18n/routing';
+import { getPageMetadata } from "@/lib/seo";
 
 const benefits = [
   ['Commission earnings', 'Earn recurring revenue when your audience buys eSIM packages through your partner link.'],
