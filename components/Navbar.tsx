@@ -10,6 +10,7 @@ import { IMAGES } from '@/constants/images';
 
 const navItems = [
   ['/', 'home'],
+  ['/device-support', 'deviceSupport'],
   ['/contact', 'contact'],
   ['/about', 'about'],
   ['/how-to-install-esim', 'install'],

@@ -18,7 +18,7 @@ const cardVariants: Variants = {
 function MissionContent({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <div className="text-center px-6 pt-24 pb-10 md:px-12 md:pb-12 h-full flex flex-col justify-center relative z-10">
-      <h3 className="text-[22px] md:text-[24px] font-bold text-primary mb-4 tracking-tight leading-snug">
+      <h3 className="text-sm md:text-[24px] font-bold text-primary mb-4 tracking-tight leading-snug">
         {t('mission.heading')}
       </h3>
       <p className="text-text-primary text-sm md:text-base leading-relaxed font-normal max-w-[460px] mx-auto">
@@ -30,8 +30,8 @@ function MissionContent({ t }: { t: ReturnType<typeof useTranslations> }) {
 
 function VisionContent({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
-    <div className="text-center px-6 pt-22 pb-10 md:px-12 md:pb-12 h-full flex flex-col justify-center relative z-10">
-      <h3 className="text-[22px] md:text-[24px] font-bold text-primary mb-4 tracking-tight leading-snug">
+    <div className="text-center px-6 pt-24 pb-10 md:px-12 md:pb-12 h-full flex flex-col justify-center relative z-10">
+      <h3 className="text-sm md:text-[24px] font-bold text-primary mb-4 tracking-tight leading-snug">
         {t('vision.heading')}
       </h3>
       <p className="text-text-primary text-sm md:text-base leading-relaxed font-normal max-w-[460px] mx-auto">
@@ -70,8 +70,8 @@ export function VisionMissionSection() {
   />
   
   {/* Mission Title */}
-  <div className="absolute -top-[15px] md:top-10 left-1/2 -translate-x-1/2 z-20 px-9 py-1.5 rounded-[14px]">
-    <span className="text-[15px] font-bold text-black uppercase tracking-wide block">
+  <div className="absolute text-center -top-[15px]  md:top-10 left-1/2 -translate-x-1/2 z-20 px-9 py-1.5 rounded-[14px]">
+    <span className="text-xs md:text-lg font-bold text-black uppercase tracking-wide block">
       {t('mission.title')}
     </span>
   </div>
@@ -99,8 +99,8 @@ export function VisionMissionSection() {
             />
             
             {/* Vision Title */}
-            <div className="absolute -top-[15px] md:top-10 left-1/2 -translate-x-1/2 z-20 px-9 py-1.5 rounded-[14px]">
-              <span className="text-[15px] font-bold text-black uppercase tracking-wide block">
+            <div className="absolute text-center  -top-[15px] md:top-10 left-1/2 -translate-x-1/2 z-20 px-9 py-1.5 rounded-[14px]">
+              <span className="text-xs md:text-lg  font-bold text-black uppercase tracking-wide block">
                 {t('vision.title')}
               </span>
             </div>

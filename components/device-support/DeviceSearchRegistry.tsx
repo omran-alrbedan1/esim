@@ -4,38 +4,8 @@ import { useState } from 'react';
 import { Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { useTranslations } from 'next-intl';
-
-const iosDevices = [
-  'iPad 8th Gen (WiFi+Cellular)',
-  'iPad 10th Gen',
-  'iPad Pro 11-inch (M4)',
-  'iPad Pro 11-inch 4th Gen (WiFi+Cellular)',
-  'iPad Pro 11-inch 4th Gen',
-  'iPad Pro 11-inch 3rd Gen (WiFi+Cellular)',
-  'iPad Pro 11-inch 3rd Gen',
-  'iPad mini 5th Gen',
-  'iPad mini (6th Gen)',
-  'iPad Air 5th Gen (WiFi+Cellular)',
-  'iPad Air 3rd Gen',
-  'iPad Air 13-inch (M2)',
-  'iPad 10th Gen',
-  'iPad 8th Gen (WiFi+Cellular)',
-  'iPad mini 5th Gen',
-  'iPad mini 5th Gen',
-  'iPad mini 5th Gen',
-  'iPad mini 5th Gen',
-  'iPad mini 5th Gen',
-];
-
-const androidDevices = [
-  'Samsung Galaxy S24 Ultra',
-  'Samsung Galaxy S23',
-  'Google Pixel 9 Pro',
-  'Google Pixel 8',
-  'Xiaomi 14 Pro',
-  'Oppo Find X5',
-];
+import { useTranslations, useLocale } from 'next-intl';
+import { androidDevices, iosDevices } from '@/constants/data';
 
 const sectionStagger: Variants = {
   hidden: { opacity: 0 },
@@ -73,6 +43,8 @@ const tagItem: Variants = {
 };
 
 export function DeviceSearchRegistry() {
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
   const t = useTranslations('deviceSupport.registry');
   const [activeTab, setActiveTab] = useState<'iOS' | 'Android'>('iOS');
   const [searchQuery, setSearchQuery] = useState('');
@@ -82,6 +54,15 @@ export function DeviceSearchRegistry() {
   const filteredDevices = currentDevices.filter((device) =>
     device.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Calculate the position based on RTL
+  const getTabPosition = () => {
+    if (activeTab === 'iOS') {
+      return isRTL ? 'calc(100% - 50% - 3px)' : '6px';
+    } else {
+      return isRTL ? '6px' : 'calc(50% + 3px)';
+    }
+  };
 
   return (
     <motion.section
@@ -146,7 +127,9 @@ export function DeviceSearchRegistry() {
               height: 'calc(100% - 12px)',
               top: 6,
             }}
-            animate={{ left: activeTab === 'iOS' ? 6 : 'calc(50% + 3px)' }}
+            animate={{ 
+              left: getTabPosition(),
+            }}
           />
           <button
             onClick={() => setActiveTab('iOS')}
@@ -185,7 +168,7 @@ export function DeviceSearchRegistry() {
             placeholder={t('searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-transparent text-xs font-medium text-[#1A0B2E] outline-none placeholder-[#9C8EB2]"
+            className={`w-full bg-transparent text-xs font-medium text-[#1A0B2E] outline-none placeholder-[#9C8EB2] ${isRTL ? 'text-right' : ''}`}
           />
         </motion.div>
 

@@ -5,8 +5,8 @@ import { locales, type Locale } from './i18n';
 export const SITE_URL ="https://esim-wine.vercel.app"
 
 const DEFAULT_OG_IMAGE = '/og-image.jpg';
-const DEFAULT_OG_WIDTH = 1376;
-const DEFAULT_OG_HEIGHT = 768;
+const DEFAULT_OG_WIDTH = 1200;
+const DEFAULT_OG_HEIGHT = 630;
 const SITE_NAME = 'Net eSIM';
 
 const PAGE_OG_IMAGES: Record<string, string> = {
@@ -75,7 +75,7 @@ function alternates(locale: string, path: string) {
         width: DEFAULT_OG_WIDTH,
         height: DEFAULT_OG_HEIGHT,
         alt: `${SITE_NAME} travel eSIM connectivity`,
-        type: 'image/jpg',
+        type: 'image/jpeg',
       }],
     },
     twitter: {
@@ -156,7 +156,7 @@ export async function getPageMetadata({
           width: DEFAULT_OG_WIDTH,
           height: DEFAULT_OG_HEIGHT,
           alt: imageAlt,
-          type: 'image/jpg',
+          type: 'image/jpeg',
         },
       ],
     },

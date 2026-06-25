@@ -1,0 +1,30 @@
+export const iosDevices = [
+  'iPad 8th Gen (WiFi+Cellular)',
+  'iPad 10th Gen',
+  'iPad Pro 11-inch (M4)',
+  'iPad Pro 11-inch 4th Gen (WiFi+Cellular)',
+  'iPad Pro 11-inch 4th Gen',
+  'iPad Pro 11-inch 3rd Gen (WiFi+Cellular)',
+  'iPad Pro 11-inch 3rd Gen',
+  'iPad mini 5th Gen',
+  'iPad mini (6th Gen)',
+  'iPad Air 5th Gen (WiFi+Cellular)',
+  'iPad Air 3rd Gen',
+  'iPad Air 13-inch (M2)',
+  'iPad 10th Gen',
+  'iPad 8th Gen (WiFi+Cellular)',
+  'iPad mini 5th Gen',
+  'iPad mini 5th Gen',
+  'iPad mini 5th Gen',
+  'iPad mini 5th Gen',
+  'iPad mini 5th Gen',
+];
+
+export const androidDevices = [
+  'Samsung Galaxy S24 Ultra',
+  'Samsung Galaxy S23',
+  'Google Pixel 9 Pro',
+  'Google Pixel 8',
+  'Xiaomi 14 Pro',
+  'Oppo Find X5',
+];
