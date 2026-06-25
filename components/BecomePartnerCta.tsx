@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
-import { Link } from '@/i18n/routing';
 import { HOME_IMAGES } from '@/constants/images';
+import Link from 'next/link';
 
 export default function BecomePartnerCta() {
   const t = useTranslations('home');
@@ -40,8 +40,8 @@ export default function BecomePartnerCta() {
 
         {/* Unified Dual-Action Capsule Button (Matches image_7da448.png) */}
         <div className="mt-4 inline-flex items-center self-center rounded-full bg-white p-1 shadow-[0_8px_24px_rgba(57,11,89,0.06)] md:self-start">
-          <Link 
-            href="/become-partner" 
+          <Link
+            href="/how-to-install-esim" 
             className='button button-dark'
           >
             {t('becomePartner.primary')}
