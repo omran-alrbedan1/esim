@@ -16,8 +16,7 @@ export default function DeviceSupportHero() {
       imageSizes="(max-width: 768px) 100vw, 250px"
       floatingText={`${t('hero.floatingPrefix')} ${t('hero.floatingHighlight')}`}
       actions={[
-        { href: '/support', label: t('hero.secondaryCta'), variant: 'secondary' },
-        { href: '/support', label: t('hero.secondaryCta'), variant: 'text' },
+        { href: '/about', label: t('hero.secondaryCta'), variant: 'secondary' },
       ]}
       floatingIcons={[
         { icon: <Rocket size={18} className="transform rotate-45" />, label: "5G" },
