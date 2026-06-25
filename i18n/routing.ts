@@ -13,7 +13,7 @@ export const routing = defineRouting({
     '/privacy': '/privacy',
     '/packages': '/packages',
     '/device-support': '/device-support',
-    '/how-to-install-esim': '/how-to-install-esim',
+    '/howToInstall': '/howToInstall',
     '/become-partner': '/become-partner',
     '/terms': '/terms',
     '/terms-of-use': '/terms-of-use',

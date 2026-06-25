@@ -19,6 +19,9 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
     deviceSupport,
     terms,
     packages,
+    privacy,
+    refund,
+    howToInstall, // Add this
   ] = await Promise.all([
     import(`../messages/${locale}/common.json`),
     import(`../messages/${locale}/navigation.json`),
@@ -30,6 +33,9 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
     import(`../messages/${locale}/deviceSupport.json`),
     import(`../messages/${locale}/terms.json`),
     import(`../messages/${locale}/packages.json`),
+    import(`../messages/${locale}/privacy.json`),
+    import(`../messages/${locale}/refund.json`),
+    import(`../messages/${locale}/howToInstall.json`), // Add this
   ]);
 
   return {
@@ -45,6 +51,9 @@ export default getRequestConfig(async ({requestLocale}: {requestLocale: Promise<
       deviceSupport: deviceSupport.default,
       terms: terms.default,
       packages: packages.default,
+      privacy: privacy.default,
+      refund: refund.default,
+      howToInstall: howToInstall.default, 
     },
     timeZone: 'Asia/Amman'
   };

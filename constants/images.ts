@@ -14,7 +14,7 @@ export const HOME_IMAGES = {
 } as const;
 
 export const ABOUT_IMAGES = {
-  hero:'/images/about/about_hero.png',
+  hero:'/images/about/about_hero.jpg',
   hero2:'/images/about/about_hero2.jpeg',
 } as const; 
 export const FRAMES = {
@@ -22,6 +22,7 @@ export const FRAMES = {
   frame2:'/images/frames/frame2.png',
   frame3:'/images/frames/frame3.png',
   frame4:'/images/frames/frame4.png',
+  frame5:'/images/frames/frame5.png',
 } as const; 
 
 export const DEVICE_SUPPORT_IMAGES = {
@@ -31,6 +32,9 @@ export const DEVICE_SUPPORT_IMAGES = {
 export const CONTACT_IMAGES = {
   hero_english: '/images/contact/hero_english.png',
   hero_arabic: '/images/contact/hero_arabic.png',
-
   
+  
+}
+export const HOW_TO_INSTALL_IMAGES ={
+  hero:'/images/how-to-install/how-to-install.png',
 }
