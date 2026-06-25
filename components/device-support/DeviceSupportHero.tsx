@@ -16,7 +16,6 @@ export default function DeviceSupportHero() {
       imageSizes="(max-width: 768px) 100vw, 250px"
       floatingText={`${t('hero.floatingPrefix')} ${t('hero.floatingHighlight')}`}
       actions={[
-        { href: '/supported-devices', label: t('hero.primaryCta'), variant: 'primary' },
         { href: '/support', label: t('hero.secondaryCta'), variant: 'secondary' },
         { href: '/support', label: t('hero.secondaryCta'), variant: 'text' },
       ]}
