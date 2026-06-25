@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import { Link, usePathname } from '@/i18n/routing';
+import { usePathname } from '@/i18n/routing';
 import LanguageSwitcher from './LanguageSwitcher';
 import { IMAGES } from '@/constants/images';
+import Link from 'next/link';
 
 const navItems = [
   ['/', 'home'],
@@ -127,7 +128,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/packages"
-            className="mt-2 inline-flex min-h-10 items-center justify-center rounded-full bg-primary-deep px-4 text-sm font-bold text-white"
+            className={'button button-light'}
             onClick={() => setOpen(false)}
           >
             {t('packages')}

@@ -51,7 +51,6 @@ export default function Footer() {
         <div className="flex w-full flex-col gap-2.5 md:flex-1 md:basis-[180px] items-center md:items-start">
           <h4 className="mb-1 font-['Trebuchet_MS','Segoe_UI',sans-serif] text-base font-bold text-white">{t('footer.company')}</h4>
           <Link href="/about">{t('footer.about')}</Link>
-          <Link href="/become-partner">{t('footer.becomePartner')}</Link>
           <Link href="/packages">{t('footer.plans')}</Link>
           <Link href="/contact">{t('footer.support')}</Link>
         </div>

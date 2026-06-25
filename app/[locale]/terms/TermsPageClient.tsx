@@ -54,7 +54,7 @@ export default function TermsPageClient() {
 
   return (
     <main className={`min-h-screen px-3 pb-16 pt-20 sm:px-6 lg:px-8 ${isRTL ? 'text-right' : ''}`}>
-      <div className="mx-auto max-w-[1140px]">
+      <div className="mx-auto max-w-[1140px] mt-12">
         <section className="w-full rounded-[28px] sm:rounded-[40px] hero-bg p-5 sm:p-8 md:p-12 text-center text-white shadow-[0_20px_50px_rgba(125,71,165,0.15)] relative overflow-hidden">
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
             <div className="flex items-center justify-center gap-2 mb-3">
