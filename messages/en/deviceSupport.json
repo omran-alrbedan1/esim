@@ -1,7 +1,8 @@
 {
-  "seo": {
-    "title": "Device Support | Net eSIM",
-    "description": "Check if your phone supports eSIM. Review compatible devices and requirements before activation."
+  "metadata": {
+    "title": "Device Support",
+    "description": "Check if your phone supports eSIM. Review compatible devices and requirements before activation.",
+    "keywords": "device support, esim compatible, phone compatibility, esim devices"
   },
   "hero": {
     "titleLine1": "Does Your Device",

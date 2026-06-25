@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getPageMetadata } from "@/lib/metadata";
+import { getPageMetadata } from "@/lib/seo";
 import { AboutHero } from '@/components/about';
 import { StorySection } from '@/components/about/StorySection';
 import { VisionMissionSection } from '@/components/about/VisionMissionSection';

@@ -1,22 +1,9 @@
 {
-  "seo": {
-    "title": "About Us | Net eSIM",
-    "description": "Learn about Net eSIM and our mission to make global connectivity simple and affordable for every traveler.",
-    "keywords": "about net esim, global esim, esim travel, digital sim, futurex",
-    "ogTitle": "About Net eSIM — Global Connectivity Made Simple",
-    "ogDescription": "Discover how Net eSIM is transforming travel connectivity with instant digital SIMs.",
-    "ogImage": "/og-image.jpg",
-    "twitterTitle": "About Net eSIM — Global Connectivity Made Simple",
-    "twitterDescription": "Discover how Net eSIM is transforming travel connectivity with instant digital SIMs."
-  },
   "metadata": {
-    "title": "About Us | Net eSIM",
+    "title": "About Us",
     "description": "Learn about Net eSIM and our mission to make global connectivity simple and affordable for every traveler.",
     "keywords": "about net esim, global esim, esim travel, digital sim, futurex",
-    "openGraph": {
-      "title": "About Net eSIM — Global Connectivity Made Simple",
-      "description": "Discover how Net eSIM is transforming travel connectivity with instant digital SIMs."
-    }
+    "ogImage": "/og-image.jpg"
   },
   "hero": {
     "tag": "ABOUT US",

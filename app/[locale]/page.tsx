@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
-import { getPageMetadata } from "@/lib/metadata";
+import { getPageMetadata } from "@/lib/seo";
 import { HomeDestinations, HomeFaq, HomeHero, HomeHow, HomeTimeline, HomeTrustedBrands } from "@/components/home";
 
 export async function generateStaticParams() {

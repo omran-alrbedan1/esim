@@ -1,22 +1,9 @@
 {
-  "seo": {
-    "title": "اتصل بنا | Net eSIM",
-    "description": "اتصل بفريق Net eSIM للاستفسارات أو الشراكات أو الدعم الفني.",
-    "keywords": "اتصل بنا, اسعار نت esim, دعم, شريحة الكترونية",
-    "ogTitle": "اتصل بـ Net eSIM — نحن هنا للمساعدة",
-    "ogDescription": "تواصل مع فريقنا لأي استفسار حول شريحتك الإلكترونية.",
-    "ogImage": "/og-image.jpg",
-    "twitterTitle": "اتصل بـ Net eSIM — نحن هنا للمساعدة",
-    "twitterDescription": "تواصل مع فريقنا لأي استفسار حول شريحتك الإلكترونية."
-  },
   "metadata": {
-    "title": "اتصل بنا | Net eSIM",
+    "title": "اتصل بنا",
     "description": "اتصل بفريق Net eSIM للاستفسارات أو الشراكات أو الدعم الفني.",
     "keywords": "اتصل بنا, اسعار نت esim, دعم, شريحة الكترونية",
-    "openGraph": {
-      "title": "اتصل بـ Net eSIM — نحن هنا للمساعدة",
-      "description": "تواصل مع فريقنا لأي استفسار حول شريحتك الإلكترونية."
-    }
+    "ogImage": "/og-image.jpg"
   },
   "tag": "اتصل بنا",
   "title": "<span>تواصل</span> معنا.",

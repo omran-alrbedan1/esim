@@ -246,7 +246,7 @@ function ContactFormCard({
             variants={{
               hidden: {
                 opacity: 0,
-                y: -window.innerHeight * 0.6,
+                y: -600,
                 rotate: 720,
                 scale: 0.3,
               },

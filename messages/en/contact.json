@@ -1,22 +1,9 @@
 {
-  "seo": {
-    "title": "Contact Us | Net eSIM",
-    "description": "Contact the Net eSIM team for inquiries, partnerships, or technical support.",
-    "keywords": "contact net esim, esim support, travel connectivity help, net esim contact",
-    "ogTitle": "Contact Net eSIM — We're Here to Help",
-    "ogDescription": "Get in touch with our team for any questions about your eSIM.",
-    "ogImage": "/og-image.jpg",
-    "twitterTitle": "Contact Net eSIM — We're Here to Help",
-    "twitterDescription": "Get in touch with our team for any questions about your eSIM."
-  },
   "metadata": {
-    "title": "Contact Us | Net eSIM",
+    "title": "Contact Us",
     "description": "Contact the Net eSIM team for inquiries, partnerships, or technical support.",
     "keywords": "contact net esim, esim support, travel connectivity help, net esim contact",
-    "openGraph": {
-      "title": "Contact Net eSIM — We're Here to Help",
-      "description": "Get in touch with our team for any questions about your eSIM."
-    }
+    "ogImage": "/og-image.jpg"
   },
   "tag": "CONTACT US",
   "title": "Let's <span>connect</span>.",

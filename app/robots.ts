@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/metadata";
+import { SITE_URL } from "@/lib/seo";
+
+const isProduction = process.env.NODE_ENV === "production";
 
 export default function robots(): MetadataRoute.Robots {
+  if (!isProduction) {
+    return {
+      rules: [{ userAgent: "*", disallow: "/" }],
+    };
+  }
+
   return {
     rules: [
       {

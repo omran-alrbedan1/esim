@@ -1,22 +1,9 @@
 {
-  "seo": {
-    "title": "Net eSIM | Stay connected anywhere",
-    "description": "Affordable eSIM data plans for more than 190 countries. Instant activation, no roaming fees.",
-    "keywords": "esim, travel esim, global esim, mobile data, international roaming, net esim",
-    "ogTitle": "Net eSIM — Stay Connected Anywhere",
-    "ogDescription": "Fast, affordable mobile data for your next trip. No roaming fees, no physical SIM.",
-    "ogImage": "/og-image.jpg",
-    "twitterTitle": "Net eSIM — Stay Connected Anywhere",
-    "twitterDescription": "Fast, affordable mobile data for your next trip. No roaming fees, no physical SIM."
-  },
   "metadata": {
-    "title": "Net eSIM | Stay connected anywhere",
+    "title": "Stay connected anywhere",
     "description": "Affordable eSIM data plans for more than 190 countries. Instant activation, no roaming fees.",
     "keywords": "esim, travel esim, global esim, mobile data, international roaming, net esim",
-    "openGraph": {
-      "title": "Net eSIM — Stay Connected Anywhere",
-      "description": "Fast, affordable mobile data for your next trip. No roaming fees, no physical SIM."
-    }
+    "ogImage": "/og-image.jpg"
   },
   "hero": {
     "tag": "GLOBAL eSIM · 190+ COUNTRIES",

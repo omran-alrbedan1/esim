@@ -1,22 +1,9 @@
 {
-  "seo": {
-    "title": "من نحن | Net eSIM",
-    "description": "تعرف على Net eSIM ومهمتنا لجعل الاتصال العالمي بسيطاً وبأسعار معقولة لكل مسافر.",
-    "keywords": "من نحن, esim, شريحة الكترونية, نت esim, سفر, فيوتشر إكس",
-    "ogTitle": "Net eSIM — الاتصال العالمي بكل بساطة",
-    "ogDescription": "اكتشف كيف تغير Net eSIM طريقة اتصال المسافرين حول العالم.",
-    "ogImage": "/og-image.jpg",
-    "twitterTitle": "Net eSIM — الاتصال العالمي بكل بساطة",
-    "twitterDescription": "اكتشف كيف تغير Net eSIM طريقة اتصال المسافرين حول العالم."
-  },
   "metadata": {
-    "title": "من نحن | Net eSIM",
+    "title": "من نحن",
     "description": "تعرف على Net eSIM ومهمتنا لجعل الاتصال العالمي بسيطاً وبأسعار معقولة لكل مسافر.",
     "keywords": "من نحن, esim, شريحة الكترونية, نت esim, سفر, فيوتشر إكس",
-    "openGraph": {
-      "title": "Net eSIM — الاتصال العالمي بكل بساطة",
-      "description": "اكتشف كيف تغير Net eSIM طريقة اتصال المسافرين حول العالم."
-    }
+    "ogImage": "/og-image.jpg"
   },
   "hero": {
     "tag": "من نحن",

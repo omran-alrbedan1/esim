@@ -4,9 +4,9 @@ import { getMessages } from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { getRootLayoutMetadata } from "@/lib/metadata";
+import { getRootLayoutMetadata } from "@/lib/seo";
 import { type Locale } from "@/lib/i18n";
-import { JsonLd } from "../JsonLd";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Cta } from "@/components/Cta";
 
 export async function generateMetadata({

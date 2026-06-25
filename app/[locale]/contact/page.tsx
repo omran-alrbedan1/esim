@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getPageMetadata } from "@/lib/metadata";
+import { getPageMetadata } from "@/lib/seo";
 import ContactClient from './ContactClient';
 import { type Locale } from "@/lib/i18n";
 

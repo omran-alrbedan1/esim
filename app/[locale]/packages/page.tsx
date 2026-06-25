@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
-import { getPageMetadata } from "@/lib/metadata";
+import { getPageMetadata } from "@/lib/seo";
 import { Check, ChevronRight, Search, Smartphone } from 'lucide-react';
 
 export async function generateStaticParams() {
@@ -9,12 +9,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
-  return getPageMetadata({
-    locale,
-    path: "/packages",
-    title: "eSIM Packages | Net eSIM",
-    description: "Browse Net eSIM data packages for travel destinations, with clear durations, data amounts, and quick digital activation.",
-  });
+  return getPageMetadata({ locale, page: "packages", path: "/packages" });
 }
 
 const amounts = ['1GB', '5GB', '10GB', '20GB', 'Unlimited'];

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
-import { SITE_URL } from "@/lib/metadata";
+import { SITE_URL } from "@/lib/seo";
 
 const pages = [
   { path: "", priority: 1.0, changeFrequency: "weekly" as const },
@@ -12,9 +12,7 @@ const pages = [
   { path: "/how-to-install-esim", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/privacy", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/terms", priority: 0.4, changeFrequency: "yearly" as const },
-  { path: "/terms-of-use", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/refund", priority: 0.4, changeFrequency: "yearly" as const },
-  { path: "/cookie", priority: 0.3, changeFrequency: "yearly" as const },
   { path: "/policies", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/sitemap", priority: 0.3, changeFrequency: "monthly" as const },
 ];

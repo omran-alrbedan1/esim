@@ -1,4 +1,4 @@
-import { SITE_URL } from '@/lib/metadata';
+import { SITE_URL } from '@/lib/seo';
 
 const organization = {
   '@context': 'https://schema.org',
@@ -42,11 +42,37 @@ const website = {
   },
 };
 
+const webpage = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${SITE_URL}/#webpage`,
+  url: SITE_URL,
+  name: 'Net eSIM',
+  description: 'Travel eSIM packages, coverage information, and compatibility guidance.',
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  inLanguage: ['en', 'ar'],
+  about: {
+    '@type': 'Thing',
+    name: 'eSIM Travel Connectivity',
+  },
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${SITE_URL}/#breadcrumb`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/en` },
+  ],
+};
+
 export function JsonLd() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpage) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
     </>
   );
 }

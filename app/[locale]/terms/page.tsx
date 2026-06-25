@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
-import { getPageMetadata } from "@/lib/metadata";
+import { getPageMetadata } from "@/lib/seo";
 import TermsPageClient from './TermsPageClient';
 
 export async function generateStaticParams() {
@@ -9,12 +9,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
-  return getPageMetadata({
-    locale,
-    path: "/terms",
-    title: "Terms & Conditions | Net eSIM",
-    description: "Net eSIM terms and conditions - service description, user responsibilities, and company information.",
-  });
+  return getPageMetadata({ locale, page: "terms", path: "/terms" });
 }
 
 export default function TermsPage() {

@@ -8,12 +8,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
   const { locale } = await params;
-  return getPageMetadata({
-    locale,
-    path: "/refund",
-    title: "Refund Policy | Net eSIM",
-    description: "Net eSIM refund policy - eligibility criteria and how to request a refund for your eSIM purchase.",
-  });
+  return getPageMetadata({ locale, page: "refund", path: "/refund" });
 }
 
 export default function RefundPage() {

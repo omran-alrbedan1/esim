@@ -1,7 +1,8 @@
 {
-  "seo": {
-    "title": "Terms & Conditions | Net eSIM",
-    "description": "Net eSIM terms of use - guidelines and conditions for using our eSIM services."
+  "metadata": {
+    "title": "Terms & Conditions",
+    "description": "Net eSIM terms of use - guidelines and conditions for using our eSIM services.",
+    "keywords": "terms, conditions, esim terms, net esim, terms of use"
   },
   "hero": {
     "date": "Last Updated: June 2026",

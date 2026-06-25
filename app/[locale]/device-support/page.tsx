@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
-import { getPageMetadata } from "@/lib/metadata";
+import { getPageMetadata } from "@/lib/seo";
 import { DeviceRequirements, DeviceSearchRegistry, DeviceSupportHero } from "@/components/device-support";
 import { HomeFaq } from "@/components/home";
 
